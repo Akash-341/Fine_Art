@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="41dp"
+            android:src="@drawable/falogo"
+            app:shapeAppearanceOverlay="@style/circularShape" />
+
+        <TextView
+            android:id="@+id/quoteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Quote Goes Here"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_below="@id/profileImageView"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="John Doe"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_below="@id/quoteTextView"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/designationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Software Developer"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_below="@id/nameTextView"
+            android:layout_marginTop="4dp"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
