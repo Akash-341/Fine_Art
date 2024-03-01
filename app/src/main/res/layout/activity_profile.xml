@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Profile_Activity">
+
+    <ImageView
+        android:id="@+id/back_icon"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/Main_Margin"
+        android:layout_marginTop="@dimen/Main_Margin"
+        android:layout_marginEnd="@dimen/Main_Margin"
+        android:layout_marginBottom="@dimen/Main_Margin"
+        android:src="@drawable/arrow_back_icon" />
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/back_icon">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/product_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/demo_image"
+                app:shapeAppearance="@style/Profile_Image_Shape" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:text="Suraj Telgade"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingLeft="@dimen/Padding_Left"
+                android:paddingRight="@dimen/Padding_Right"
+                android:text="telagadesuraj581998@gmail.com"
+                android:textSize="@dimen/SC_Product_Description_Text_Size" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/user_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/user_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/user_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Personal Details"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/order_history_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/order_history_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/order_history_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Orders History"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/address_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/manage_address_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/address_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Manage Addresses"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/password_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/change_passoword_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/password_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Chanage Password"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/gray"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+
+                android:text="Usesful Links"
+                android:textStyle="bold"
+                android:textSize="@dimen/SC_Product_Description_Text_Size" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/private_policy_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/private_policy_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/private_policy_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Privacy Policy "
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/terms_condition_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/terms_and_conditions_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/terms_condition_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Terms &amp; Conditions"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
+                <ImageView
+                    android:id="@+id/shopping_policy_icon"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/shopping_terms_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/shopping_policy_icon"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_5sdp"
+
+                    android:textColor="@color/black"
+                    android:text="Shopping Policy"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right"
+        android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+        android:layout_marginBottom="@dimen/Main_Margin_Bottom">
+        <ImageView
+            android:id="@+id/logout_icon"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:padding="@dimen/_2sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logout_iocn"
+            app:tint="@color/app_color" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/logout_icon"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/_5sdp"
+
+            android:textColor="@color/app_color"
+            android:text="Logout"
+            android:textSize="@dimen/_12ssp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

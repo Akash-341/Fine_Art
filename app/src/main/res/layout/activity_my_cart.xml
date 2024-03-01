@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MyCart_Activity">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/Main_Margin"
+        android:layout_marginTop="@dimen/Main_Margin"
+        android:layout_marginEnd="@dimen/Main_Margin"
+        android:layout_marginBottom="@dimen/Main_Margin"
+        android:text="My Cart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/WL_Heading_Text_Size"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:orientation="vertical"
+        android:layout_above="@id/checkout_layout">
+
+        <include
+            layout="@layout/shopping_cart_card_layout"/>
+        <include
+            layout="@layout/shopping_cart_card_layout"/>
+        <include
+            layout="@layout/shopping_cart_card_layout"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/checkout_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/Main_Margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="3dp"
+                    android:text="(3 Items)"
+
+
+                    android:textSize="@dimen/_14ssp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="3dp"
+                    android:text="₹"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_22ssp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+
+
+            android:background="@drawable/round_black_button_shape_backgroud"
+
+            android:orientation="horizontal"
+            android:padding="@dimen/Main_Padding">
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Processed to checkout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/SC_Product_Price_Text_Size"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentRight="true"
+
+                android:src="@drawable/check_out_icon"
+                android:tint="@color/white"
+                tools:ignore="UseAppTint" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

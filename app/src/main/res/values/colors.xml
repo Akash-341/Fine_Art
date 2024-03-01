@@ -10,4 +10,16 @@
     <color name="red">#ff0f0f</color>
     <color name="blue_highlight">#3498db</color>
     <color name="background">#F1F3F3</color>
+
+
+
+    <color name="gray">#7C7B7B</color>
+    <color name="light_gray">#D1CECE</color>
+    <color name="app_color">#ee1717</color>
+    <color name="app_color_light">#E3ADAD</color>
+    <color name="green_color">#348003</color>
+    <color name="light_green_color">#DAF1CA</color>
+
+
+
 </resources>

@@ -13,4 +13,52 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+
+    <style name="Round_Shape_Image" parent="">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/SC_Image_Round_Radius</item>
+        <item name="cornerSizeTopRight">@dimen/SC_Image_Round_Radius</item>
+        <item name="cornerSizeBottomLeft">@dimen/SC_Image_Round_Radius</item>
+        <item name="cornerSizeBottomRight">@dimen/SC_Image_Round_Radius</item>
+    </style>
+
+    <style name="Profile_Image_Shape" parent="">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+
+    <style name="Product_Item_Shape_Image" parent="">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/_14sdp</item>
+        <item name="cornerSizeTopRight">@dimen/_14sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_14sdp</item>
+        <item name="cornerSizeBottomRight">@dimen/_14sdp</item>
+    </style>
+
+
+
+    <style name="RoundedCornerFlotButtonStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/Round_Shape_Radius</item> <!-- Adjust this value as needed -->
+    </style>
+
+
+
+
+
+
 </resources>
