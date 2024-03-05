@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +19,7 @@ import com.example.fineart.Adapter.TestimonialAdapter;
 import com.example.fineart.Model.Product;
 import com.example.fineart.Model.TestimonialModel;
 import com.example.fineart.R;
+import com.example.fineart.ViewModel.DotdViewModel;
 import com.example.fineart.databinding.FragmentHomePageBinding;
 
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ public class Home_page extends Fragment {
     private List<Product> productList;
     private DotdAdapter productAdapter;
     private TestimonialAdapter testimonialAdapter;
+    private DotdViewModel dotdViewModel;
     private List<TestimonialModel> testimonialModelList;
 
     private int currentVisiblePosition = 0;
@@ -38,6 +41,7 @@ public class Home_page extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        dotdViewModel = new ViewModelProvider(this).get(DotdViewModel.class);
 
     }
 
@@ -47,9 +51,9 @@ public class Home_page extends Fragment {
         // Inflate the layout for this fragment
         binding=FragmentHomePageBinding.inflate(inflater, container, false);
 //        flipperImages();
-        productList = initializeProductList();
+//        productList = initializeProductList();
         testimonialModelList=initializeTestimonialList();
-        productAdapter = new DotdAdapter(productList,getActivity().getApplicationContext());
+        productAdapter = new DotdAdapter(productList,getActivity().getApplicationContext(),requireActivity());
         testimonialAdapter=new TestimonialAdapter(testimonialModelList);
 
         productAdapter.setOnWishlistClickListener(new DotdAdapter.OnWishlistClickListener() {
@@ -66,19 +70,25 @@ public class Home_page extends Fragment {
         binding.bsrecycler.setAdapter(productAdapter);
 
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        binding.testimonialRecycler.setLayoutManager(layoutManager2);
         binding.testimonialRecycler.setAdapter(testimonialAdapter);
-
         startAutoScroll();
+
+        dotdViewModel.getProductList().observe(getViewLifecycleOwner(), productList -> {
+            productAdapter.setProductList(productList);
+            productAdapter.notifyDataSetChanged();
+        });
+        dotdViewModel.setProductList(initializeProductList());
         return binding.getRoot();
     }
-    private void flipperImages() {
+ /*   private void flipperImages() {
 
         binding.homeSlider.setFlipInterval(2000);
         binding.homeSlider.startFlipping();
 
         binding.homeSlider.setInAnimation(getContext(), R.anim.slide_in_left);
         binding.homeSlider.setOutAnimation(getContext(), R.anim.slide_out_right);
-    }
+    }*/
     private List<Product> initializeProductList() {
         // Populate the list with your product data
         // For simplicity, using placeholder data here
@@ -105,9 +115,8 @@ public class Home_page extends Fragment {
         return productList;
     }
     private void toggleWishlist(int position) {
-        Product product = productList.get(position);
-        product.setWishlist(!product.isWishlist());
-        productAdapter.notifyItemChanged(position);
+
+        dotdViewModel.toggleWishlist(position);
     }
 
     private void startAutoScroll() {

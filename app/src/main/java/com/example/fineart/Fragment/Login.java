@@ -1,5 +1,7 @@
 package com.example.fineart.Fragment;
 
+import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -45,8 +47,22 @@ public class Login extends Fragment {
         binding.tvlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                String username = binding.usernameInput.getText().toString().trim();
+                String password = binding.pass.getText().toString().trim();
+
+                if (username.isEmpty() || password.isEmpty()) {
+                    // Fields are empty, apply the shake animation
+                    ObjectAnimator shakeAnimation = ObjectAnimator.ofFloat(binding.cardView, "translationX", -10, 10);
+                    shakeAnimation.setDuration(100);
+                    shakeAnimation.setRepeatCount(10);
+                    shakeAnimation.setRepeatMode(ObjectAnimator.REVERSE);
+                    shakeAnimation.start();
+                } else {
+                    // Fields are not empty, start the MainActivity
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+                    requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
             }
         });
         return binding.getRoot();

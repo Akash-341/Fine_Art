@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.fineart.R;
 import com.example.fineart.databinding.ActivitySplshScreenBinding;
 
 public class SplshScreen extends AppCompatActivity {
@@ -20,6 +21,8 @@ public class SplshScreen extends AppCompatActivity {
             // Start your main activity after the splash screen duration
             Intent intent = new Intent(SplshScreen.this, LoginActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.scale_up, 0);
+
             finish();
         }, splashScreenDuration);
     }

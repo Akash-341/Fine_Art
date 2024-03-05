@@ -1,6 +1,8 @@
 package com.example.fineart.Model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String name;
     private boolean isWishlist;
 

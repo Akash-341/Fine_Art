@@ -5,28 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.MyCart_Activity">
-
-
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="@dimen/Main_Margin"
-        android:layout_marginTop="@dimen/Main_Margin"
-        android:layout_marginEnd="@dimen/Main_Margin"
-        android:layout_marginBottom="@dimen/Main_Margin"
-        android:text="My Cart"
-        android:textColor="@color/black"
-        android:textSize="@dimen/WL_Heading_Text_Size"
-        android:textStyle="bold" />
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_nav_gradient">
+
+            <!-- Container for icons and logo -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="end">
+
+                <!-- Your Existing Logo -->
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="start"
+
+                    android:layout_marginEnd="200dp"
+                    android:src="@drawable/falogo" />
+
+                <!-- Profile Icon -->
+                <!-- <ImageView
+                     android:id="@+id/wishlistIcon"
+                     android:layout_width="30dp"
+                     android:layout_height="50dp"
+                     android:layout_marginEnd="10dp"
+                     android:layout_toEndOf="@id/logo"
+                     android:src="@drawable/ic_baseline_favorite_24" />
+
+
+                 &lt;!&ndash; Cart Icon &ndash;&gt;
+                 <ImageView
+                     android:id="@+id/cartIcon"
+                     android:layout_width="30dp"
+                     android:layout_height="50dp"
+                     android:layout_marginEnd="10dp"
+                     android:layout_toEndOf="@id/wishlistIcon"
+                     android:src="@drawable/ic_baseline_shopping_cart_24" />
+
+                 <ImageView
+                     android:id="@+id/profileIcon"
+                     android:layout_width="30dp"
+                     android:layout_height="50dp"
+
+                     android:layout_toEndOf="@id/cartIcon"
+                     android:src="@drawable/ic_baseline_person_pin_24" />
+                 &lt;!&ndash; Wishlist Icon &ndash;&gt;
+ -->
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/heading"
         android:orientation="vertical"
-        android:layout_above="@id/checkout_layout">
-
+        android:layout_above="@id/checkout_layout"
+        tools:ignore="NotSibling">
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/Main_Margin"
+            android:layout_marginEnd="@dimen/Main_Margin"
+            android:layout_marginBottom="@dimen/Main_Margin"
+            android:text="My Cart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/WL_Heading_Text_Size"
+            android:textStyle="bold" />
         <include
             layout="@layout/shopping_cart_card_layout"/>
         <include
@@ -51,7 +109,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="5dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +138,7 @@
                     android:text="(3 Items)"
 
 
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/text_size_xmedium" />
 
 
             </LinearLayout>
@@ -111,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:text="1000"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_22ssp"
+                    android:textSize="@dimen/text_size_large"
                     android:textStyle="bold" />
 
 
@@ -147,8 +205,8 @@
                 />
 
             <ImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/text_size_20dp"
+                android:layout_height="@dimen/text_size_20dp"
                 android:layout_alignParentRight="true"
 
                 android:src="@drawable/check_out_icon"
