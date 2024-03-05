@@ -157,7 +157,7 @@
                     android:id="@+id/order_history_icon"
                     android:layout_width="@dimen/_24sdp"
                     android:layout_height="@dimen/_24sdp"
-                    android:padding="@dimen/_1sdp"
+                    android:padding="@dimen/_2sdp"
                     android:layout_centerVertical="true"
                     android:src="@drawable/order_history_icon"/>
                 <TextView

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.Update_Address_Activity">
+    tools:context="Activity.Personal_Details_Activity">
     <RelativeLayout
         android:id="@+id/back_layout"
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:paddingLeft="@dimen/Main_Margin_Left"
 
             android:textColor="@color/black"
-            android:text="Update Address"
+            android:text="Personal Details"
             android:textSize="@dimen/_16ssp"
             />
 
@@ -47,15 +47,26 @@
 
             android:orientation="vertical">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/product_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/demo_user_image"
+                app:shapeAppearance="@style/Profile_Image_Shape" />
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Type Of Address"
-                app:helperTextTextColor="@color/gray"
+                android:hint="First Name"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
 
                 app:boxBackgroundColor="@android:color/transparent"
-                app:helperText="Like Home/Office">
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -67,7 +78,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Address Line 1"
+                android:hint="Last Name"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
 
@@ -84,7 +95,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Address Line 2"
+                android:hint="Email"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
 
@@ -94,6 +105,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -101,7 +113,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Type Of Address"
+                android:hint="Phone No"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
 
@@ -111,73 +123,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Town / City"
-                app:helperTextTextColor="@color/gray"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
-                app:boxBackgroundColor="@android:color/transparent"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Pincode"
-                app:helperTextTextColor="@color/gray"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
-                app:boxBackgroundColor="@android:color/transparent"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter State"
-                app:helperTextTextColor="@color/gray"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
-                app:boxBackgroundColor="@android:color/transparent"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Country"
-                app:helperTextTextColor="@color/gray"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-                app:boxBackgroundColor="@android:color/transparent"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:inputType="number"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -199,7 +145,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:text="Save Address"
+                    android:text="Update Details"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="@dimen/SC_Product_Price_Text_Size"

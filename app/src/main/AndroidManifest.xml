@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.View_All_Coupons_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Personal_Details_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Order_CheckOut_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Oder_Details_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Order_History_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ProductDetails"
             android:exported="false">
             <meta-data

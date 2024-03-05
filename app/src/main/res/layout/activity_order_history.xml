@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="Activity.Order_History_Activity">
+
+    <RelativeLayout
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right"
+        >
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/back_icon"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/Main_Margin_Left"
+
+            android:textColor="@color/black"
+            android:text="Order History"
+            android:textSize="@dimen/_16ssp"
+            />
+
+    </RelativeLayout>
+    <include layout="@layout/order_history_card_layout"/>
+    <include layout="@layout/order_history_card_layout"/>
+    <include layout="@layout/order_history_card_layout"/>
+</LinearLayout>

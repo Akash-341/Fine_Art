@@ -23,5 +23,10 @@
 
 
     <color name="green">#3eb489</color>
+    <color name="blue">#0A2F97</color>
+    <color name="light_blue">#D6DEF5</color>
 
+
+    <color name="yellow">#998106</color>
+    <color name="light_yellow">#F6F1D7</color>
 </resources>

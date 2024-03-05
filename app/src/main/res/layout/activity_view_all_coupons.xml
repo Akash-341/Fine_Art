@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="Activity.View_All_Coupons_Activity">
+    <RelativeLayout
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back_icon"
+            android:paddingLeft="@dimen/Main_Margin_Left"
+
+            android:text="View All Coupons"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/Main_Margin"
+        android:background="@drawable/round_button_outline_shape">
+
+        <ImageView
+            android:id="@+id/serach_icon"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:padding="4dp"
+            android:src="@drawable/search_icon"
+            android:tint="@color/black"
+            tools:ignore="UseAppTint" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/serach_icon"
+            android:background="@android:color/transparent"
+            android:hint="Enter to search..."
+            android:padding="@dimen/_10sdp"
+
+            />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/coupons_card_view_layout"/>
+
+
+    <include layout="@layout/coupons_card_view_layout"/>
+</LinearLayout>

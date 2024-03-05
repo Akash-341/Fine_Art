@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="@dimen/Main_Margin_Right"
+    android:layout_marginLeft="@dimen/Main_Margin_Left"
+    android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+    android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom"
+    android:background="@drawable/doted_background_shape"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right"
+        android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+        android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom"
+        >
+        <RelativeLayout
+            android:id="@+id/apply_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+
+            android:background="@drawable/round_black_button_shape_backgroud"
+            android:backgroundTint="@color/app_color_light"
+
+            android:padding="@dimen/_3sdp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:text="Apply"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_7ssp" />
+
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/apply_btn"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/ultra"
+            android:text="First10"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="italic" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_color"
+        android:layout_marginRight="@dimen/Main_Margin_Right"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right"
+        android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+        android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom"
+        android:text="for first 10 order we will give 10% discount"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/_7ssp" />
+
+
+
+</LinearLayout>

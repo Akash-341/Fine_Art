@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Activity.Update_Address_Activity">
+    tools:context=".Fragment.Add_Delivery_Address_Fragment">
+
+
+
     <RelativeLayout
         android:id="@+id/back_layout"
         android:layout_width="match_parent"
@@ -19,17 +22,16 @@
             android:id="@+id/back_icon"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_icon" />
+            android:src="@drawable/close_icons" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/back_icon"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/Main_Margin_Left"
-
             android:textColor="@color/black"
-            android:text="Update Address"
+            android:text="Add Address"
             android:textSize="@dimen/_16ssp"
             />
 
@@ -49,6 +51,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Type Of Address"
@@ -216,4 +219,6 @@
 
 
     </androidx.core.widget.NestedScrollView>
+
+
 </LinearLayout>
