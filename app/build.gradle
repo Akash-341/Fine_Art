@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.fineart'
+    namespace 'com.ort.fineart'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.fineart"
+        applicationId "com.ort.fineart"
         minSdk 21
         targetSdk 34
         versionCode 1
