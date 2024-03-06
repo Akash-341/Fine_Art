@@ -15,9 +15,9 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
-
+    //registration
     @FormUrlEncoded
-    @POST("Customer_Backend/add_customer/")
+    @POST(All_URL.register)
     Call<RegistrationApiResponse_ResponseModel> registerUser(
 
             @Field("FirstName") String firstName,
@@ -28,19 +28,23 @@ public interface ApiService {
             @Field("ConfirmPassword") String confirmPassword
     );
 
-
-    @GET("banner_master_backend/get_published_bottombanner_list/")
+    //bottom banner list dashboard
+    @GET(All_URL.bottom_baneer_list)
     Call<List<BottomBannerData_ResponseModel>> getBottomBaner();
 
 
-
-    @GET("testimonial_master_backend/get_published_customer_testimonials_list")
+    //testimonial list dashboard
+    @GET(All_URL.testimonial_list)
     Call<List<TestimonialModel_ResponseModel>> getTestimonials();
 
-
-    @GET("banner_master_backend/get_published_topbanner_list/")
+    //Top banner list Dashboard
+    @GET(All_URL.top_banner_list)
     Call<List<TopBannerModel_ResponseModel>> getTopBanner();
 
+    //
     @GET("product_master_backend/get_published_product_list/")
     Call<List<Product_ResponseModel>> getProductList();
+
+    @GET("catlogue_master_backend/get_category_list/")
+    Call<List<String>> getCategoriesList();
 }
