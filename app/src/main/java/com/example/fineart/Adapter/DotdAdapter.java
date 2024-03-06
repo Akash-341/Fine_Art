@@ -45,14 +45,17 @@ public class DotdAdapter extends RecyclerView.Adapter<DotdAdapter.ProductViewHol
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
 
-        holder.productName.setText(product.getName());
+        holder.productName.setText(product.getProductName());
+        holder.productDesc.setText(product.getProductShortDescription());
+        holder.productprice.setText(product.getProductPrice());
+        holder.discountprice.setText(product.getProductDiscountPrice());
 
         // Change the heart color based on wishlist status
-        if (product.isWishlist()) {
-            holder.wishlistImage.setImageResource(R.drawable.ic_baseline_favorite_24);
-        } else {
-            holder.wishlistImage.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-        }
+//        if (product.isWishlist()) {
+//            holder.wishlistImage.setImageResource(R.drawable.ic_baseline_favorite_24);
+//        } else {
+//            holder.wishlistImage.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+//        }
         holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(context, ProductDetails.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -77,12 +80,15 @@ public class DotdAdapter extends RecyclerView.Adapter<DotdAdapter.ProductViewHol
 
     // ViewHolder class
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView productName;
+        TextView productName,productDesc,productprice,discountprice;
         ImageView wishlistImage;
 
         public ProductViewHolder(@NonNull View itemView, final OnWishlistClickListener listener) {
             super(itemView);
             productName = itemView.findViewById(R.id.productTitle);
+            productDesc= itemView.findViewById(R.id.productDesc);
+            productprice = itemView.findViewById(R.id.productPrice);
+            discountprice = itemView.findViewById(R.id.discountedPriceTextView);
             wishlistImage = itemView.findViewById(R.id.ic_wishlist);
 
             wishlistImage.setOnClickListener(new View.OnClickListener() {

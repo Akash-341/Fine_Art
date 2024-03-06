@@ -102,6 +102,7 @@
                 app:shapeAppearance="@style/Profile_Image_Shape" />
 
             <TextView
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -111,6 +112,7 @@
                 android:textSize="@dimen/_18ssp"
                 android:textStyle="bold" />
             <TextView
+                android:id="@+id/useremail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -234,97 +236,7 @@
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/Main_Margin_Left"
-                android:layout_marginRight="@dimen/Main_Margin_Right"
-                android:layout_marginTop="@dimen/Main_Margin_Top"
 
-                android:text="Usesful Links"
-                android:textStyle="bold"
-                android:textSize="@dimen/SC_Product_Description_Text_Size" />
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/Main_Margin_Left"
-                android:layout_marginRight="@dimen/Main_Margin_Right"
-                android:layout_marginTop="@dimen/Main_Margin_Top"
-                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
-                <ImageView
-                    android:id="@+id/private_policy_icon"
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/private_policy_icon"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/private_policy_icon"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="@dimen/_5sdp"
-
-                    android:textColor="@color/black"
-                    android:text="Privacy Policy "
-                    android:textSize="@dimen/_12ssp"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/Main_Margin_Left"
-                android:layout_marginRight="@dimen/Main_Margin_Right"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
-                <ImageView
-                    android:id="@+id/terms_condition_icon"
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/terms_and_conditions_icon"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/terms_condition_icon"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="@dimen/_5sdp"
-
-                    android:textColor="@color/black"
-                    android:text="Terms &amp; Conditions"
-                    android:textSize="@dimen/_12ssp"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/Main_Margin_Left"
-                android:layout_marginRight="@dimen/Main_Margin_Right"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-                android:layout_marginBottom="@dimen/Half_Main_Margin_Bottom">
-                <ImageView
-                    android:id="@+id/shopping_policy_icon"
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/shopping_terms_icon"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/shopping_policy_icon"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="@dimen/_5sdp"
-
-                    android:textColor="@color/black"
-                    android:text="Shopping Policy"
-                    android:textSize="@dimen/_12ssp"
-                    />
-
-            </RelativeLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

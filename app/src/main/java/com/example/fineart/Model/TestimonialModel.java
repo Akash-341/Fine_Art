@@ -1,24 +1,51 @@
 package com.example.fineart.Model;
+import com.google.gson.annotations.SerializedName;
+
 
 public class TestimonialModel {
-    private String quote;
-    private String name;
-    private String designation;
-    private String imageUrl;
 
-    public TestimonialModel(String quote, String name, String designation, String imageUrl) {
-        this.quote = quote;
+    public TestimonialModel(Integer id, String title, String name, String subName, String description, Boolean isactive, Boolean status, String image) {
+        this.id = id;
+        this.title = title;
         this.name = name;
-        this.designation = designation;
-        this.imageUrl = imageUrl;
+        this.subName = subName;
+        this.description = description;
+        this.isactive = isactive;
+        this.status = status;
+        this.image = image;
     }
 
-    public String getQuote() {
-        return quote;
+    @SerializedName("id")
+    private Integer id;
+    @SerializedName("Title")
+    private String title;
+    @SerializedName("Name")
+    private String name;
+    @SerializedName("SubName")
+    private String subName;
+    @SerializedName("Description")
+    private String description;
+    @SerializedName("isactive")
+    private Boolean isactive;
+    @SerializedName("Status")
+    private Boolean status;
+    @SerializedName("Image")
+    private String image;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setQuote(String quote) {
-        this.quote = quote;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getName() {
@@ -29,19 +56,44 @@ public class TestimonialModel {
         this.name = name;
     }
 
-    public String getDesignation() {
-        return designation;
+    public String getSubName() {
+        return subName;
     }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
+    public void setSubName(String subName) {
+        this.subName = subName;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getDescription() {
+        return description;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
+    public Boolean getIsactive() {
+        return isactive;
+    }
+
+    public void setIsactive(Boolean isactive) {
+        this.isactive = isactive;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 }

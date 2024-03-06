@@ -7,16 +7,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.fineart.R;
+import com.example.fineart.SharedPreferenceManager;
 import com.example.fineart.databinding.ActivityProfileBinding;
 
 public class Profile_Activity extends AppCompatActivity {
     ActivityProfileBinding binding;
+    SharedPreferenceManager sharedPreferenceManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
+        sharedPreferenceManager=new SharedPreferenceManager(this);
+
+        String userId = sharedPreferenceManager.getUserId();
+        String userEmail = sharedPreferenceManager.getUserEmail();
+        String userFirstName = sharedPreferenceManager.getUserFirstName();
+        String userLastName = sharedPreferenceManager.getUserLastName();
+
+        binding.username.setText(userFirstName+" "+userLastName);
+        binding.useremail.setText(userEmail);
+
         Drawable backArrow = getResources().getDrawable(R.drawable.back_arrow);
         getSupportActionBar().setHomeAsUpIndicator(backArrow);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

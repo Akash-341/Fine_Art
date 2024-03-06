@@ -74,15 +74,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/productDesc"
-                android:text="4500₹"
-                android:fontFamily="@font/fira_sans"
                 android:layout_centerHorizontal="true"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:maxLines="2"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/fira_sans"
+                android:maxLines="2"
+                android:text="5000₹"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
 
                 />
+
+            <TextView
+                android:id="@+id/discountedPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productDesc"
+                android:layout_alignStart="@+id/productDesc"
+                android:layout_alignEnd="@+id/productPrice"
+                android:layout_alignBottom="@+id/productPrice"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="-46dp"
+                android:layout_marginBottom="-9dp"
+                android:text="Discounted Price:4500₹"
+                android:textColor="@android:color/red"
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/ic_wishlist"

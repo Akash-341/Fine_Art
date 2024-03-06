@@ -42,7 +42,7 @@ public class About_us extends Fragment {
         // Check if WebView has a valid URL
         if (binding.webview != null) {
             // Load the URL
-            binding.webview.loadUrl("http://www.thefinearthub.com/about_us/");
+            binding.webview.loadUrl("http://www.thefinearthub.com/contact_us/");
 
             // Enable JavaScript
             WebSettings webSettings = binding.webview.getSettings();

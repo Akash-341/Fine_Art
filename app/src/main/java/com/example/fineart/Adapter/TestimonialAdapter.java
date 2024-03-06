@@ -10,8 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.example.fineart.All_URL;
 import com.example.fineart.Model.TestimonialModel;
 import com.example.fineart.R;
+import com.example.fineart.databinding.TestimonialCardBinding;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;
@@ -27,24 +29,18 @@ public class TestimonialAdapter extends RecyclerView.Adapter<TestimonialAdapter.
     @NonNull
     @Override
     public PersonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.testimonial_card, parent, false);
-        return new PersonViewHolder(view);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        TestimonialCardBinding binding=TestimonialCardBinding.inflate(layoutInflater,parent,false);
+        return new PersonViewHolder(binding);
     }
-
+    public void setTestimonialList(List<TestimonialModel> testimonialList) {
+        this.personList = testimonialList;
+    }
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
         TestimonialModel person = personList.get(position);
 
-        // Load image using Glide with centerCrop transformation
-        Glide.with(holder.itemView.getContext())
-                .load(person.getImageUrl())
-                .transform(new CenterCrop())
-                .placeholder(R.drawable.falogo)
-                .into(holder.profileImageView);
-
-        holder.quoteTextView.setText(person.getQuote());
-        holder.nameTextView.setText(person.getName());
-        holder.designationTextView.setText(person.getDesignation());
+        holder.bind(person);
     }
 
     @Override
@@ -53,18 +49,25 @@ public class TestimonialAdapter extends RecyclerView.Adapter<TestimonialAdapter.
     }
 
     static class PersonViewHolder extends RecyclerView.ViewHolder {
-        ShapeableImageView profileImageView;
-        TextView quoteTextView;
-        TextView nameTextView;
-        TextView designationTextView;
 
-        public PersonViewHolder(@NonNull View itemView) {
-            super(itemView);
+        TestimonialCardBinding binding;
 
-            profileImageView = itemView.findViewById(R.id.profileImageView);
-            quoteTextView = itemView.findViewById(R.id.quoteTextView);
-            nameTextView = itemView.findViewById(R.id.nameTextView);
-            designationTextView = itemView.findViewById(R.id.designationTextView);
+        public PersonViewHolder(TestimonialCardBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
+            void bind(TestimonialModel model){
+                Glide.with(binding.getRoot().getContext())
+                        .load(All_URL.imgURL+model.getImage())
+                        .transform(new CenterCrop())
+                        .placeholder(R.drawable.ic_launcher_background)
+                        .into(binding.profileImageView);
+              binding.quoteTextView.setText(model.getDescription());
+                binding.nameTextView.setText(model.getName());
+                binding.designationTextView.setText(model.getSubName());
+            }
+
+
+
     }
 }
