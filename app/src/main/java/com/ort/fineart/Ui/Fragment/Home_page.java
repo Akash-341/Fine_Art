@@ -20,7 +20,7 @@ import com.bumptech.glide.Glide;
 import com.ort.fineart.Api_Handel.ApiService;
 import com.ort.fineart.Model.Response_Model.BottomBannerData_ResponseModel;
 import com.ort.fineart.Model.Response_Model.Product_ResponseModel;
-import com.ort.fineart.Model.Response_Model.TestimonialModel_ResponseModel;
+import com.ort.fineart.Model.Response_Model.Testimonial_ResponseModel;
 import com.ort.fineart.Model.Response_Model.TopBannerModel_ResponseModel;
 import com.ort.fineart.Recycler_Adapter.DotdAdapter;
 import com.ort.fineart.Recycler_Adapter.TestimonialAdapter;
@@ -45,9 +45,9 @@ public class Home_page extends Fragment {
     private DotdAdapter productAdapter;
     private TestimonialAdapter testimonialAdapter;
     private DotdViewModel dotdViewModel;
-    private List<TestimonialModel_ResponseModel> testimonialModelList;
+    private List<Testimonial_ResponseModel> testimonialModelList;
     private TestimonialViewModel testimonialViewModel;
-    private LiveData<List<TestimonialModel_ResponseModel>> testimonialListLiveData;
+    private LiveData<List<Testimonial_ResponseModel>> testimonialListLiveData;
     private LiveData<List<Product_ResponseModel>> productLiveData;
 
     private int currentVisiblePosition = 0;
@@ -101,9 +101,9 @@ public class Home_page extends Fragment {
                 productAdapter.notifyDataSetChanged();
             }
         });
-        testimonialListLiveData.observe(getViewLifecycleOwner(), new Observer<List<TestimonialModel_ResponseModel>>() {
+        testimonialListLiveData.observe(getViewLifecycleOwner(), new Observer<List<Testimonial_ResponseModel>>() {
             @Override
-            public void onChanged(List<TestimonialModel_ResponseModel> testimonialModels) {
+            public void onChanged(List<Testimonial_ResponseModel> testimonialModels) {
                 // Update the UI with the new data
                 testimonialAdapter.setTestimonialList(testimonialModels);
                 testimonialAdapter.notifyDataSetChanged();

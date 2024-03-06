@@ -1,9 +1,13 @@
 package com.ort.fineart.Api_Handel;
 
+import static com.ort.fineart.Api_Handel.All_URL.Testimonial_List;
+import static com.ort.fineart.Api_Handel.All_URL.bottom_baneer_list;
+import static com.ort.fineart.Api_Handel.All_URL.register;
+
 import com.ort.fineart.Model.Response_Model.BottomBannerData_ResponseModel;
 import com.ort.fineart.Model.Response_Model.Product_ResponseModel;
 import com.ort.fineart.Model.Response_Model.RegistrationApiResponse_ResponseModel;
-import com.ort.fineart.Model.Response_Model.TestimonialModel_ResponseModel;
+import com.ort.fineart.Model.Response_Model.Testimonial_ResponseModel;
 import com.ort.fineart.Model.Response_Model.TopBannerModel_ResponseModel;
 
 import java.util.List;
@@ -17,7 +21,7 @@ import retrofit2.http.POST;
 public interface ApiService {
     //registration
     @FormUrlEncoded
-    @POST(All_URL.register)
+    @POST(register)
     Call<RegistrationApiResponse_ResponseModel> registerUser(
 
             @Field("FirstName") String firstName,
@@ -29,16 +33,16 @@ public interface ApiService {
     );
 
     //bottom banner list dashboard
-    @GET(All_URL.bottom_baneer_list)
+    @GET(bottom_baneer_list)
     Call<List<BottomBannerData_ResponseModel>> getBottomBaner();
 
 
     //testimonial list dashboard
-    @GET(All_URL.testimonial_list)
-    Call<List<TestimonialModel_ResponseModel>> getTestimonials();
+    @GET(Testimonial_List)
+    Call<List<Testimonial_ResponseModel>> getTestimonials();
 
     //Top banner list Dashboard
-    @GET(All_URL.top_banner_list)
+    @GET(All_URL.Top_banner_list)
     Call<List<TopBannerModel_ResponseModel>> getTopBanner();
 
     //

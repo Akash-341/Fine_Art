@@ -2,9 +2,9 @@ package com.ort.fineart.Model.Response_Model;
 import com.google.gson.annotations.SerializedName;
 
 
-public class TestimonialModel_ResponseModel {
+public class Testimonial_ResponseModel {
 
-    public TestimonialModel_ResponseModel(Integer id, String title, String name, String subName, String description, Boolean isactive, Boolean status, String image) {
+    public Testimonial_ResponseModel(Integer id, String title, String name, String subName, String description, Boolean isactive, Boolean status, String image) {
         this.id = id;
         this.title = title;
         this.name = name;

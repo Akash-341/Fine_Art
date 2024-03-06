@@ -15,15 +15,14 @@ import retrofit2.Response;
 public class ProductRepository {
 
     private ApiService productApi;
-    private MutableLiveData<List<Product_ResponseModel>> productListLiveData;
+    private MutableLiveData<List<Product_ResponseModel>> productListLiveData= new MutableLiveData<>();;
 
     public ProductRepository() {
-        productApi = RetrofitClient.getRetrofitInstance().create(ApiService.class);
-        productListLiveData = new MutableLiveData<>();
+
     }
 
     public MutableLiveData<List<Product_ResponseModel>> getProducts() {
-        Call<List<Product_ResponseModel>> call = productApi.getProductList();
+        Call<List<Product_ResponseModel>> call = RetrofitClient.getInstance().getApiService().getProductList();
         call.enqueue(new Callback<List<Product_ResponseModel>>() {
             @Override
             public void onResponse(Call<List<Product_ResponseModel>> call, Response<List<Product_ResponseModel>> response) {

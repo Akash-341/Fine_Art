@@ -3,22 +3,35 @@ package com.ort.fineart.Api_Handel;
 
 import com.ort.fineart.Api_Handel.All_URL;
 
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = All_URL.URL;
+    public static final String url=All_URL.BASE_URL;
+    public static RetrofitClient client;
+    public static Retrofit retrofit;
 
-    private static Retrofit retrofit = null;
+    RetrofitClient(){
+        retrofit=new Retrofit.Builder()
 
-    public static Retrofit getRetrofitInstance() {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit;
+                .baseUrl(url)
+
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
     }
+    public static synchronized RetrofitClient getInstance(){
+        if (client==null)
+            client=new RetrofitClient();
+        return client;
+    }
+    public ApiService getApiService(){
+        return retrofit.create(ApiService.class);
+    }
+
+
+
 }
