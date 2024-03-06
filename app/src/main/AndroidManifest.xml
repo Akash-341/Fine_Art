@@ -16,50 +16,53 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.View_All_Coupons_Activity"
+            android:name=".Ui.Activity.Authorization_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Personal_Details_Activity"
+            android:name=".Ui.Activity.View_All_Coupons_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Order_CheckOut_Activity"
+            android:name=".Ui.Activity.Personal_Details_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Oder_Details_Activity"
+            android:name=".Ui.Activity.Order_CheckOut_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Order_History_Activity"
+            android:name=".Ui.Activity.Oder_Details_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ProductDetails"
+            android:name=".Ui.Activity.Order_History_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.Activity.ProductDetails"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.Update_Address_Activity"
+            android:name=".Ui.Activity.Update_Address_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Profile_Activity"
+            android:name=".Ui.Activity.Profile_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.MyCart_Activity"
+            android:name=".Ui.Activity.MyCart_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.My_Wishlist_Activity"
+            android:name=".Ui.Activity.My_Wishlist_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Manage_Addreses_Activity"
+            android:name=".Ui.Activity.Manage_Addreses_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Change_Password_Activity"
+            android:name=".Ui.Activity.Change_Password_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.AddAddress_Activity"
+            android:name=".Ui.Activity.AddAddress_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SplshScreen"
+            android:name=".Ui.Activity.SplshScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,14 +75,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activity.LoginActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activity.MainActivity"
+            android:name=".Ui.Activity.MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

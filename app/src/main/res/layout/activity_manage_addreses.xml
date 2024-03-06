@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.Manage_Addreses_Activity">
+    tools:context=".Ui.Activity.Manage_Addreses_Activity">
 
     <RelativeLayout
         android:id="@+id/back_layout"
