@@ -62,7 +62,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="25sp"
 
@@ -98,7 +97,6 @@
                         android:hint="Email"
                         android:textColorHint="@color/white"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/black"
                         android:focusableInTouchMode="true"
                         android:clickable="true"
                         android:focusable="true"
@@ -138,7 +136,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Password"
-                        android:textColor="@color/black"
                         android:inputType="textPassword"
                         android:focusableInTouchMode="true"
                         android:clickable="true"

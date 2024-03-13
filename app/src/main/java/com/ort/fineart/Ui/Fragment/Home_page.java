@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -19,14 +20,16 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.ort.fineart.Api_Handel.ApiService;
 import com.ort.fineart.Model.Response_Model.BottomBannerData_ResponseModel;
-import com.ort.fineart.Model.Response_Model.Product_ResponseModel;
+import com.ort.fineart.Model.Response_Model.Deal_Of_The_day.Payload;
 import com.ort.fineart.Model.Response_Model.Testimonial_ResponseModel;
 import com.ort.fineart.Model.Response_Model.TopBannerModel_ResponseModel;
+import com.ort.fineart.Recycler_Adapter.BestSellerAdapter;
 import com.ort.fineart.Recycler_Adapter.DotdAdapter;
 import com.ort.fineart.Recycler_Adapter.TestimonialAdapter;
 import com.ort.fineart.Api_Handel.All_URL;
 import com.ort.fineart.R;
 import com.ort.fineart.Api_Handel.RetrofitClient;
+import com.ort.fineart.ViewModel.BestSellerViewModel;
 import com.ort.fineart.ViewModel.DotdViewModel;
 import com.ort.fineart.ViewModel.TestimonialViewModel;
 import com.ort.fineart.databinding.FragmentHomePageBinding;
@@ -41,14 +44,18 @@ import retrofit2.Response;
 public class Home_page extends Fragment {
 
     FragmentHomePageBinding binding;
-    private List<Product_ResponseModel> productList;
-    private DotdAdapter productAdapter;
+    private List<Payload> dotdList;
+    private List<com.ort.fineart.Model.Response_Model.Best_Seller.Payload> best_Seller_List;
+    private DotdAdapter dotdAdapter;
+    private BestSellerAdapter bestSellerAdapter;
     private TestimonialAdapter testimonialAdapter;
     private DotdViewModel dotdViewModel;
+    private BestSellerViewModel bestSellerViewModel;
     private List<Testimonial_ResponseModel> testimonialModelList;
     private TestimonialViewModel testimonialViewModel;
     private LiveData<List<Testimonial_ResponseModel>> testimonialListLiveData;
-    private LiveData<List<Product_ResponseModel>> productLiveData;
+    private LiveData<List<Payload>> dotdLiveData;
+    private LiveData<List<com.ort.fineart.Model.Response_Model.Best_Seller.Payload>> bestsellerLiveData;
 
     private int currentVisiblePosition = 0;
     private boolean isAutoScrolling = false;
@@ -59,8 +66,10 @@ public class Home_page extends Fragment {
         super.onCreate(savedInstanceState);
         dotdViewModel = new ViewModelProvider(this).get(DotdViewModel.class);
         testimonialViewModel = new ViewModelProvider(this).get(TestimonialViewModel.class);
+        bestSellerViewModel=new ViewModelProvider(this).get(BestSellerViewModel.class);
         testimonialListLiveData = testimonialViewModel.getTestimonialListLiveData();
-        productLiveData = dotdViewModel.getProductList();
+        dotdLiveData = dotdViewModel.getProductList();
+        bestsellerLiveData=bestSellerViewModel.getProductList();
     }
 
     @Override
@@ -71,34 +80,49 @@ public class Home_page extends Fragment {
 //        flipperImages();
 //        productList = initializeProductList();
 
-        productAdapter = new DotdAdapter(productList, getActivity().getApplicationContext(), requireActivity());
+        dotdAdapter = new DotdAdapter(dotdList, getActivity().getApplicationContext(), requireActivity());
         testimonialAdapter = new TestimonialAdapter(testimonialModelList);
+        bestSellerAdapter=new BestSellerAdapter(best_Seller_List,getActivity().getApplicationContext(),requireActivity());
 
-        productAdapter.setOnWishlistClickListener(new DotdAdapter.OnWishlistClickListener() {
+        dotdAdapter.setOnWishlistClickListener(new DotdAdapter.OnWishlistClickListener() {
             @Override
             public void onWishlistClick(int position) {
 //                toggleWishlist(position);
             }
         });
+
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.recyclerDotd.setLayoutManager(layoutManager);
-        binding.recyclerDotd.setAdapter(productAdapter);
+        binding.recyclerDotd.setAdapter(dotdAdapter);
         binding.bsrecycler.setLayoutManager(layoutManager1);
-        binding.bsrecycler.setAdapter(productAdapter);
+        binding.bsrecycler.setAdapter(bestSellerAdapter);
 
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.testimonialRecycler.setLayoutManager(layoutManager2);
         binding.testimonialRecycler.setAdapter(testimonialAdapter);
         dotdViewModel.getProductList().observe(getViewLifecycleOwner(), productList -> {
-            productAdapter.setProductList(productList);
-            productAdapter.notifyDataSetChanged();
+            dotdAdapter.setProductList(productList);
+            dotdAdapter.notifyDataSetChanged();
         });
-        productLiveData.observe(getViewLifecycleOwner(), new Observer<List<Product_ResponseModel>>() {
+
+        bestSellerViewModel.getProductList().observe(getViewLifecycleOwner(),best_Seller_List->{
+            bestSellerAdapter.setProductList(best_Seller_List);
+            bestSellerAdapter.notifyDataSetChanged();
+        });
+      /*  bestsellerLiveData.observe(getViewLifecycleOwner(), new Observer<List<com.ort.fineart.Model.Response_Model.Best_Seller.Payload>>() {
             @Override
-            public void onChanged(List<Product_ResponseModel> product_responseModels) {
-                productAdapter.setProductList(product_responseModels);
-                productAdapter.notifyDataSetChanged();
+            public void onChanged(List<com.ort.fineart.Model.Response_Model.Best_Seller.Payload> payloads) {
+                bestSellerAdapter.setProductList(best_Seller_List);
+                bestSellerAdapter.notifyDataSetChanged();
+            }
+        });*/
+        dotdLiveData.observe(getViewLifecycleOwner(), new Observer<List<Payload>>() {
+            @Override
+            public void onChanged(List<Payload> product_responseModels) {
+                dotdAdapter.setProductList(product_responseModels);
+                dotdAdapter.notifyDataSetChanged();
             }
         });
         testimonialListLiveData.observe(getViewLifecycleOwner(), new Observer<List<Testimonial_ResponseModel>>() {
@@ -111,6 +135,14 @@ public class Home_page extends Fragment {
         });
         startAutoScroll();
 
+        binding.dotdViewAll.setOnClickListener(view -> {
+            Dotd_ViewAll fragmentB = new Dotd_ViewAll();
+
+            FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.main_container, fragmentB);
+            transaction.addToBackStack(null); // Optional: Adds the transaction to the back stack
+            transaction.commit();
+        });
 
 
         fetchBottomBannerData();

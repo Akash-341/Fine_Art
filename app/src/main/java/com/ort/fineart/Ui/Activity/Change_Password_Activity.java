@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ort.fineart.R;
+import com.ort.fineart.databinding.ActivityChangePasswordBinding;
 
 public class Change_Password_Activity extends AppCompatActivity {
-
+    ActivityChangePasswordBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_password);
+        binding=ActivityChangePasswordBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }

@@ -1,10 +1,23 @@
 package com.ort.fineart.Api_Handel;
 
-import static com.ort.fineart.Api_Handel.All_URL.Testimonial_List;
-import static com.ort.fineart.Api_Handel.All_URL.bottom_baneer_list;
-import static com.ort.fineart.Api_Handel.All_URL.register;
 
+import static com.ort.fineart.Api_Handel.All_URL.Best_Seller_List;
+import static com.ort.fineart.Api_Handel.All_URL.Category_List;
+import static com.ort.fineart.Api_Handel.All_URL.PERSONAL_DETAILS;
+import static com.ort.fineart.Api_Handel.All_URL.Product_List;
+import static com.ort.fineart.Api_Handel.All_URL.bottom_baneer_list;
+import static com.ort.fineart.Api_Handel.All_URL.dotd_List;
+import static com.ort.fineart.Api_Handel.All_URL.register;
+import static com.ort.fineart.Api_Handel.All_URL.testimonial_list;
+import static com.ort.fineart.Api_Handel.All_URL.top_banner_list;
+import static com.ort.fineart.Api_Handel.All_URL.viewProduct;
+
+import com.ort.fineart.Model.Response_Model.Best_Seller.Best_Seller_Model;
 import com.ort.fineart.Model.Response_Model.BottomBannerData_ResponseModel;
+import com.ort.fineart.Model.Response_Model.CategoryModel;
+import com.ort.fineart.Model.Response_Model.Deal_Of_The_day.DOTD_ResponseModel;
+import com.ort.fineart.Model.Response_Model.PersonalDetailsData;
+import com.ort.fineart.Model.Response_Model.ProductDetailsData.Product_Details_Model;
 import com.ort.fineart.Model.Response_Model.Product_ResponseModel;
 import com.ort.fineart.Model.Response_Model.RegistrationApiResponse_ResponseModel;
 import com.ort.fineart.Model.Response_Model.Testimonial_ResponseModel;
@@ -12,7 +25,9 @@ import com.ort.fineart.Model.Response_Model.TopBannerModel_ResponseModel;
 
 import java.util.List;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -38,17 +53,31 @@ public interface ApiService {
 
 
     //testimonial list dashboard
-    @GET(Testimonial_List)
+    @GET(testimonial_list)
     Call<List<Testimonial_ResponseModel>> getTestimonials();
 
     //Top banner list Dashboard
-    @GET(All_URL.Top_banner_list)
+    @GET(top_banner_list)
     Call<List<TopBannerModel_ResponseModel>> getTopBanner();
 
-    //
-    @GET("product_master_backend/get_published_product_list/")
-    Call<List<Product_ResponseModel>> getProductList();
+    //published
+    @GET(dotd_List)
+    Call<DOTD_ResponseModel> getProductList();
 
-    @GET("catlogue_master_backend/get_category_list/")
-    Call<List<String>> getCategoriesList();
+    //DOtd_list  hubpage
+    @GET(Category_List)
+    Call<List<CategoryModel>> getCategoriesList();
+
+
+    //Personal_Details
+    @FormUrlEncoded
+    @POST(PERSONAL_DETAILS)
+    Call<PersonalDetailsData> getPersonalData(@Field("Email") String email);
+
+    @GET(Best_Seller_List)
+    Call<Best_Seller_Model> getbestSellerList();
+
+    @FormUrlEncoded
+    @POST(viewProduct)
+    Call<Product_Details_Model> getProductData(@Field("varientId") String id);
 }

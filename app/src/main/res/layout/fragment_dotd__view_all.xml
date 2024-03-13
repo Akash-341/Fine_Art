@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingEnd="@dimen/_8sdp"
+    android:paddingTop="@dimen/_8sdp"
+    android:padding="@dimen/_8sdp"
+    tools:context=".Ui.Fragment.Dotd_ViewAll">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:background="@drawable/rounded_bg"
+            android:backgroundTint="@color/light_gray"
+            android:text="Deals of the day"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_card" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

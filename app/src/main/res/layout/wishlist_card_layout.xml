@@ -65,7 +65,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Color:"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/SC_Product_Description_Text_Size"
                     android:textStyle="bold" />
 
@@ -84,7 +83,6 @@
                     android:paddingLeft="3dp"
                     android:paddingRight="3dp"
                     android:text="|"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/SC_Product_Description_Text_Size"
 
 
@@ -94,7 +92,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Size:"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/SC_Product_Description_Text_Size"
                     android:textStyle="bold" />
 
@@ -129,18 +126,13 @@
                         android:layout_height="wrap_content"
                         android:paddingRight="3dp"
                         android:text="₹"
-
-                        android:textColor="@color/black"
                         android:textSize="@dimen/SC_Product_Price_Text_Size"
-
-
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1000"
-                        android:textColor="@color/black"
                         android:textSize="@dimen/SC_Product_Price_Text_Size"
                         android:textStyle="bold" />
 
@@ -150,8 +142,6 @@
                         android:paddingLeft="7dp"
                         android:paddingRight="3dp"
                         android:text="30000"
-
-
                         android:textSize="@dimen/SC_Product_Cancel_Price_Text_Size" />
 
 

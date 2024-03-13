@@ -66,6 +66,7 @@
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
     <ImageView
+        android:visibility="invisible"
         android:id="@+id/back_icon"
         android:layout_width="@dimen/_20sdp"
         android:layout_height="@dimen/_20sdp"
@@ -106,7 +107,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textColor="@color/black"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
                 android:text="Suraj Telgade"
                 android:textSize="@dimen/_18ssp"
@@ -136,13 +136,12 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/user_icon"/>
                 <TextView
+                    android:id="@+id/personaldeatils"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/user_icon"
                     android:layout_centerVertical="true"
                     android:paddingLeft="@dimen/_5sdp"
-
-                    android:textColor="@color/black"
                     android:text="Personal Details"
                     android:textSize="@dimen/_12ssp"
                     />
@@ -163,13 +162,13 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/order_history_icon"/>
                 <TextView
+                    android:id="@+id/orderhistory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/order_history_icon"
                     android:layout_centerVertical="true"
                     android:paddingLeft="@dimen/_5sdp"
 
-                    android:textColor="@color/black"
                     android:text="Orders History"
                     android:textSize="@dimen/_12ssp"
                     />
@@ -190,13 +189,13 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/manage_address_icon"/>
                 <TextView
+                    android:id="@+id/manage_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/address_icon"
                     android:layout_centerVertical="true"
                     android:paddingLeft="@dimen/_5sdp"
 
-                    android:textColor="@color/black"
                     android:text="Manage Addresses"
                     android:textSize="@dimen/_12ssp"
                     />
@@ -217,13 +216,12 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/change_passoword_icon"/>
                 <TextView
+                    android:id="@+id/change_pass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/password_icon"
                     android:layout_centerVertical="true"
                     android:paddingLeft="@dimen/_5sdp"
-
-                    android:textColor="@color/black"
                     android:text="Chanage Password"
                     android:textSize="@dimen/_12ssp"
                     />

@@ -16,21 +16,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.ort.fineart.Api_Handel.All_URL;
-
-import com.ort.fineart.Model.Response_Model.Deal_Of_The_day.Payload;
-import com.ort.fineart.Ui.Activity.ProductDetails;
+import com.ort.fineart.Model.Response_Model.Best_Seller.Payload;
 import com.ort.fineart.R;
+import com.ort.fineart.Ui.Activity.ProductDetails;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DotdAdapter extends RecyclerView.Adapter<DotdAdapter.ProductViewHolder> {
+public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.ViewHolder> {
     private List<Payload> productList;
-    private OnWishlistClickListener wishlistClickListener;
+    private DotdAdapter.OnWishlistClickListener wishlistClickListener;
     Context context;
     private FragmentActivity activity;
-
-    public DotdAdapter(List<Payload> productList, Context context,FragmentActivity activity) {
+    public BestSellerAdapter(List<Payload> productList, Context context,FragmentActivity activity) {
         this.productList = productList;
         this.context = context;
         this.activity=activity;
@@ -38,7 +36,7 @@ public class DotdAdapter extends RecyclerView.Adapter<DotdAdapter.ProductViewHol
     public void setProductList(List<Payload> productList) {
         List<Payload> filteredList = new ArrayList<>();
         for (Payload product : productList) {
-            if (product.getDealOfTheDay() && !product.getProductVarientId().isEmpty()) {
+            if (product.getBestSeller()&& !product.getProductVarientId().isEmpty() ) {
                 filteredList.add(product);
             }
         }
@@ -47,13 +45,13 @@ public class DotdAdapter extends RecyclerView.Adapter<DotdAdapter.ProductViewHol
     }
     @NonNull
     @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BestSellerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_card, parent, false);
-        return new ProductViewHolder(view, wishlistClickListener);
+        return new BestSellerAdapter.ViewHolder(view, wishlistClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BestSellerAdapter.ViewHolder holder, int position) {
         Payload product = productList.get(position);
 
         holder.productName.setText(product.getProductName());
@@ -77,33 +75,24 @@ public class DotdAdapter extends RecyclerView.Adapter<DotdAdapter.ProductViewHol
         holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(context, ProductDetails.class);
             intent.putExtra("productId", product.getProductVarientId());
-
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
             activity.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 
         });
+
     }
 
     @Override
     public int getItemCount() {
         return productList != null ? productList.size() : 0;
+
     }
 
-    public interface OnWishlistClickListener {
-        void onWishlistClick(int position);
-    }
-
-    public void setOnWishlistClickListener(OnWishlistClickListener listener) {
-        wishlistClickListener = listener;
-    }
-
-    // ViewHolder class
-    public static class ProductViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView productName,productDesc,productprice,discountprice;
         ImageView wishlistImage,productimage;
-
-        public ProductViewHolder(@NonNull View itemView, final OnWishlistClickListener listener) {
+        public ViewHolder(@NonNull View itemView,final DotdAdapter.OnWishlistClickListener listener) {
             super(itemView);
             productName = itemView.findViewById(R.id.productTitle);
             productDesc= itemView.findViewById(R.id.productDesc);

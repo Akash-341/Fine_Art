@@ -3,7 +3,7 @@ package com.ort.fineart.Utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class SharedPreferenceManager {
+public  class SharedPreferenceManager {
     private static final String PREF_NAME = "user_pref";
     private static final String KEY_USER_ID = "user_id";
     private static final String KEY_USER_EMAIL = "user_email";
@@ -31,7 +31,7 @@ public class SharedPreferenceManager {
         return sharedPreferences.getString(KEY_USER_ID, "");
     }
 
-    public String getUserEmail() {
+    public final String getUserEmail() {
         return sharedPreferences.getString(KEY_USER_EMAIL, "");
     }
 

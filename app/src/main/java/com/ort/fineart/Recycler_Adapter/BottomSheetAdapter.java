@@ -9,16 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.ort.fineart.Model.Response_Model.CategoryModel;
 import com.ort.fineart.R;
 
 import java.util.List;
 
 public class BottomSheetAdapter extends RecyclerView.Adapter<BottomSheetAdapter.NameViewHolder> {
-    private List<String> namesList;
+    private List<CategoryModel> namesList;
     private OnItemClickListener onItemClickListener;
 
 
-    public BottomSheetAdapter(List<String> namesList) {
+    public BottomSheetAdapter(List<CategoryModel> namesList) {
         this.namesList = namesList;
     }
 
@@ -32,11 +33,11 @@ public class BottomSheetAdapter extends RecyclerView.Adapter<BottomSheetAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull NameViewHolder holder, int position) {
-        String name = namesList.get(position);
-        holder.textName.setText(name);
+        CategoryModel name = namesList.get(position);
+        holder.textName.setText(name.getCategoryName());
         holder.itemView.setOnClickListener(v -> {
             if (onItemClickListener != null) {
-                onItemClickListener.onItemClick(v,name);
+                onItemClickListener.onItemClick(v,name.getCategoryName());
             }
         });
     }

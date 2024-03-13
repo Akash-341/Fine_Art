@@ -1,6 +1,8 @@
 package com.ort.fineart.Api_Handel;
 
 
+import static com.ort.fineart.Api_Handel.All_URL.BASE_URL;
+
 import com.ort.fineart.Api_Handel.All_URL;
 
 import java.util.concurrent.TimeUnit;
@@ -11,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    public static final String url=All_URL.BASE_URL;
+    public static final String url= BASE_URL;
     public static RetrofitClient client;
     public static Retrofit retrofit;
 
@@ -31,7 +33,15 @@ public class RetrofitClient {
     public ApiService getApiService(){
         return retrofit.create(ApiService.class);
     }
-
+    public static Retrofit getRetrofitInstance() {
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
 
 
 }

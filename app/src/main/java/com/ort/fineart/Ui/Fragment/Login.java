@@ -1,15 +1,22 @@
 package com.ort.fineart.Ui.Fragment;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -43,11 +50,16 @@ public class Login extends Fragment {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false);
+
+
+
+
 
         sharedPreferencesManager = new SharedPreferenceManager(requireContext());
 
@@ -81,6 +93,25 @@ public class Login extends Fragment {
                 }
             }
         });
+        /*binding.getRoot().setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                Log.e("TouchEvent", "Root view touched");
+
+                View focusedView = getActivity().getCurrentFocus();
+                if (focusedView instanceof EditText) {
+                    Rect outRect = new Rect();
+                    focusedView.getGlobalVisibleRect(outRect);
+                    if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
+                        focusedView.clearFocus();
+                        InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
+                        Log.e("TouchEvent", "EditText outside touched, hiding keyboard");
+
+                    }
+                }
+            }
+            return false;
+        });*/
         return binding.getRoot();
     }
 
@@ -149,4 +180,5 @@ public class Login extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Volley.newRequestQueue(getActivity().getApplicationContext()).add(stringRequest);
     }
+
 }
