@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Ui.Activity.Oder_Details_Activity">
+    <RelativeLayout
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right"
+        >
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/back_icon"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/Main_Margin_Left"
+
+            android:textColor="@color/black"
+            android:text="Order Details"
+            android:textSize="@dimen/_16ssp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/Main_Margin"
+        >
+
+        <RelativeLayout
+            android:id="@+id/status_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+
+                android:background="@drawable/round_black_button_shape_backgroud"
+                android:backgroundTint="@color/light_yellow"
+
+                android:padding="@dimen/_3sdp">
+
+                <ImageView
+                    android:id="@+id/status_icon"
+
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:src="@drawable/order_placed_icon"
+                    app:tint="@color/yellow" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/status_icon"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:text="Placed"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/yellow"
+                    />
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+
+                android:background="@drawable/round_black_button_shape_backgroud"
+                android:backgroundTint="@color/light_blue"
+
+                android:padding="@dimen/_3sdp">
+
+                <ImageView
+                    android:id="@+id/invoice_icon"
+
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:src="@drawable/invoice_icon"
+                    app:tint="@color/blue" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/invoice_icon"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:text="Invoice"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/blue"
+                    />
+
+
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_below="@id/status_lay">
+
+            <RelativeLayout
+                android:id="@+id/location_icon"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_centerVertical="true"
+
+                android:background="@drawable/image_button_background"
+                android:backgroundTint="@color/light_gray">
+
+                <ImageView
+
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/check_out_icon" />
+
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Half_Main_Margin_Left"
+                android:layout_toRightOf="@id/location_icon"
+
+                android:orientation="vertical"
+                >
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="3dp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order No:-"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_12ssp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="111300055"
+                        android:paddingLeft="@dimen/_5sdp"
+
+                        android:textSize="@dimen/_12ssp" />
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="3dp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="₹"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/SC_Product_Price_Text_Size"
+
+
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/SC_Product_Price_Text_Size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="3dp"
+                        android:text="( Online )"
+
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/SC_Product_Cancel_Price_Text_Size" />
+
+                    <View
+                        android:layout_width="@dimen/_5sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:backgroundTint="@color/black"
+                        android:layout_marginLeft="@dimen/Main_Margin_Left"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/light_red_solid_round_shape_background"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="03 March 2024"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:layout_gravity="center_vertical"
+
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/gray"
+        android:layout_marginBottom="@dimen/Main_Margin_Bottom"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right"/>
+
+
+    <include layout="@layout/order_details_cardview_layout"/>
+    <include layout="@layout/order_details_cardview_layout"/>
+    <include layout="@layout/order_details_cardview_layout"/>
+
+</LinearLayout>

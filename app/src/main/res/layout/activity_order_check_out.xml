@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Ui.Activity.Order_CheckOut_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_nav_gradient">
+
+            <!-- Container for icons and logo -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="end">
+
+                <!-- Your Existing Logo -->
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="start"
+
+                    android:layout_marginEnd="200dp"
+                    android:src="@drawable/falogo" />
+
+                <!-- Profile Icon -->
+                <!-- <ImageView
+                     android:id="@+id/wishlistIcon"
+                     android:layout_width="30dp"
+                     android:layout_height="50dp"
+                     android:layout_marginEnd="10dp"
+                     android:layout_toEndOf="@id/logo"
+                     android:src="@drawable/ic_baseline_favorite_24" />
+
+
+                 &lt;!&ndash; Cart Icon &ndash;&gt;
+                 <ImageView
+                     android:id="@+id/cartIcon"
+                     android:layout_width="30dp"
+                     android:layout_height="50dp"
+                     android:layout_marginEnd="10dp"
+                     android:layout_toEndOf="@id/wishlistIcon"
+                     android:src="@drawable/ic_baseline_shopping_cart_24" />
+
+                 <ImageView
+                     android:id="@+id/profileIcon"
+                     android:layout_width="30dp"
+                     android:layout_height="50dp"
+
+                     android:layout_toEndOf="@id/cartIcon"
+                     android:src="@drawable/ic_baseline_person_pin_24" />
+                 &lt;!&ndash; Wishlist Icon &ndash;&gt;
+ -->
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/Main_Margin_Left"
+        android:layout_marginRight="@dimen/Main_Margin_Right">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:paddingLeft="@dimen/Main_Margin_Left"
+
+            android:text="Checkout"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:text="Billing Information:-"
+                android:textColor="@color/black"
+                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:text="Prajawal Bansode"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:text="prajawal_Bansode123@gmail.com"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:text="90817124212"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:background="@color/light_gray" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginBottom="@dimen/Main_Margin_Bottom">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="Delivery Address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size" />
+
+
+                <!-- Open Add Address Bottom Sheet -->
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:background="@drawable/image_button_background"
+                    android:backgroundTint="@color/light_gray">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:src="@drawable/plus_icon"
+                        app:tint="@color/black" />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <include layout="@layout/address_cardview_layout" />
+
+            <include layout="@layout/address_cardview_layout" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:background="@color/light_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginBottom="@dimen/Main_Margin_Bottom"
+                android:text="Orders Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+
+            <include layout="@layout/checkout_product_details_card_layout" />
+
+            <include layout="@layout/checkout_product_details_card_layout" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:background="@color/light_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+
+                android:text="Coupon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Main_Margin"
+                android:background="@drawable/doted_background_shape">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/_14sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:background="@drawable/image_button_background"
+                    android:backgroundTint="@color/app_color_light">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/close_icons"
+                        app:tint="@color/app_color" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+
+                    android:text="View Coupons"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:background="@color/light_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginTop="@dimen/Main_Margin_Top"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginBottom="@dimen/Main_Margin_Bottom"
+                android:text="Pricing Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="SubTotal"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="5000₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Total Discount"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="5000₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Coupon Discount"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="5000₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Delivery Charges"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="5000₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:background="@color/gray" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Total"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="5000₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/Main_Margin_Left"
+                android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:background="@drawable/round_black_button_shape_backgroud"
+                android:orientation="horizontal"
+                android:padding="@dimen/Main_Padding">
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Place Order"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    />
+
+
+
+
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

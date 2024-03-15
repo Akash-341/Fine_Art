@@ -1,0 +1,102 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">120dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+
+
+
+
+    <!-- Application -->
+    <dimen name="Round_Shape_Radius">@dimen/_10sdp</dimen>
+
+
+
+
+
+
+    <dimen name="Main_Margin">@dimen/_14sdp</dimen>
+
+    <dimen name="Main_Margin_Left">@dimen/_14sdp</dimen>
+    <dimen name="Main_Margin_Right">@dimen/_14sdp</dimen>
+    <dimen name="Main_Margin_Top">@dimen/_14sdp</dimen>
+    <dimen name="Main_Margin_Bottom">@dimen/_14sdp</dimen>
+
+
+    <dimen name="Half_Main_Margin_Left">7dp</dimen>
+    <dimen name="Half_Main_Margin_Right">7dp</dimen>
+    <dimen name="Half_Main_Margin_Top">7dp</dimen>
+    <dimen name="Half_Main_Margin_Bottom">7dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="Main_Padding">14dp</dimen>
+    <dimen name="Half_Padding">7dp</dimen>
+
+    <dimen name="Padding_Left">14dp</dimen>
+    <dimen name="Padding_Right">14dp</dimen>
+    <dimen name="Padding_Top">14dp</dimen>
+    <dimen name="Padding_Bottom">14dp</dimen>
+
+
+    <dimen name="Half_Padding_Left">7dp</dimen>
+    <dimen name="Half_Padding_Right">7dp</dimen>
+    <dimen name="Half_Padding_Top">7dp</dimen>
+    <dimen name="Half_Padding_Bottom">7dp</dimen>
+
+
+
+    <!-- Shopping Cart demension SC-->
+    <dimen name="SC_image_size">@dimen/_65sdp</dimen>
+    <dimen name="SC_Card_Padding">10dp</dimen>
+    <dimen name="SC_Image_Round_Radius">10dp</dimen>
+
+
+
+    <dimen name="SC_Product_Name_Text_Size">@dimen/_14ssp</dimen>
+    <dimen name="SC_Product_Description_Text_Size">@dimen/_10sdp</dimen>
+    <dimen name="SC_Product_Price_Text_Size">@dimen/_14sdp</dimen>
+    <dimen name="SC_Product_Cancel_Price_Text_Size">@dimen/_12sdp</dimen>
+
+    <!--Wishlist -->
+    <dimen name="WL_Heading_Text_Size">@dimen/_18ssp</dimen>
+    <!-- MyCart -MC -->
+
+
+
+
+
+
+    <dimen name="Product_Card_Image_Height">@dimen/_150sdp</dimen>
+
+
+
+
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">120dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+    <dimen name="view_width_small">1dp</dimen>
+    <dimen name="view_width_xsmall">0.5dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_10dp">8dp</dimen>
+
+    <dimen name="text_size_xsmall">8sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_xmedium">14sp</dimen>
+    <dimen name="text_size_large">16sp</dimen>
+    <dimen name="text_size_20dp">20sp</dimen>
+    <dimen name="_3sdp">3dp</dimen>
+    <dimen name="_17sdp">17dp</dimen>
+    <dimen name="_4sdp">4dp</dimen>
+
+</resources>

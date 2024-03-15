@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Fine Art</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tt">This is very best product.\nPlease buy this product now!</string>
+    <string name="t1">this is short decription this is short decription </string>
+    <string name="product_description_long_description_long_description_long_description_long_description_long_description_long_description_long_descriptionlong_description_long_description">Product Description : Long description Long description Long description Long description Long description Long description Long descriptionLong description Long description</string>
+    <string name="product_usage_1p_usage_2p_3p_4p_5p_6p">Product Usage : 1p usage 2p 3p 4p 5p 6p</string>
+    <string name="more_details_more_details_more_details_more_details_more_details">More Details : more details more details more details more details</string>
+</resources>
