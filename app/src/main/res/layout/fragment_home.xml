@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Ui.Fragment.Home_Fragment">
+
+    <RelativeLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:background="@color/black"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+            android:layout_centerVertical="true"
+            android:src="@drawable/app_logo" />
+
+        <ImageView
+            android:id="@+id/favorite_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="@dimen/_24sdp"
+            android:layout_toLeftOf="@id/cart_Icon"
+            android:src="@drawable/favroite_unfilled_icon"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/cart_Icon"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/shopping_cart"
+            app:tint="@color/white" />
+
+
+
+
+
+
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:paddingBottom="@dimen/_50sdp"
+        android:layout_below="@id/appbar_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/banner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/View_Pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_170sdp"
+
+
+                    android:layout_gravity="center">
+
+                </androidx.viewpager.widget.ViewPager>
+                <com.google.android.material.tabs.TabLayout
+                    android:background="@android:color/transparent"
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_7sdp"
+                    app:tabBackground="@drawable/indicator"
+                    app:tabGravity="center"
+                    app:tabIndicator="@null"
+
+                    android:layout_gravity="bottom"
+
+
+                    app:tabIndicatorGravity="center"/>
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:layout_marginRight="@dimen/_14sdp"
+
+                android:layout_gravity="bottom"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deals of The Day"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/viewAllDeals_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View More"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_10ssp"
+                    />
+
+            </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/deal_of_day_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Main_Margin"
+                android:layout_gravity="bottom"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Seller"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/viewAllSeller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View More"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_10ssp"
+                    />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bestSeller_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:layout_marginRight="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+
+                android:layout_gravity="bottom"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Testimonial"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/Testimonial_View_Pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_gravity="center">
+
+            </androidx.viewpager.widget.ViewPager>
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/Bottom_View_Pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_gravity="center">
+
+            </androidx.viewpager.widget.ViewPager>
+
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

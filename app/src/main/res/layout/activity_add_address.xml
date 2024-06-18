@@ -5,33 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Ui.Activity.AddAddress_Activity">
     <RelativeLayout
-        android:id="@+id/back_layout"
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="@dimen/_44sdp"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/Main_Margin_Left"
-        android:layout_marginRight="@dimen/Main_Margin_Right"
-        >
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/back_icon"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
+
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_icon" />
+
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/back_icon"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/Main_Margin_Left"
-
-            android:textColor="@color/black"
+            android:layout_toRightOf="@id/back_icon"
             android:text="Add Address"
-            android:textSize="@dimen/_16ssp"
-            />
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_14sdp"/>
+
+
+
+
+
 
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
@@ -59,6 +68,7 @@
                 app:helperText="Like Home/Office">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressType_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -76,6 +86,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine1_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -93,28 +104,13 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine2_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Type Of Address"
-                app:helperTextTextColor="@color/gray"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
-                app:boxBackgroundColor="@android:color/transparent"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
 
                 android:layout_width="match_parent"
@@ -127,6 +123,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressCity_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -144,6 +141,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressPin_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -161,6 +159,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressState_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -177,13 +176,24 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressCountry_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
-
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/loading_lottie"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/progress_anim"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
             <RelativeLayout
+                android:id="@+id/save_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

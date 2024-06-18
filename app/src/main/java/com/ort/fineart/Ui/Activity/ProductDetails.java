@@ -21,7 +21,6 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.ort.fineart.Api_Handel.All_URL;
 import com.ort.fineart.Api_Handel.ApiService;
 import com.ort.fineart.Api_Handel.RetrofitClient;
-import com.ort.fineart.Model.Response_Model.PersonalDetailsData;
 import com.ort.fineart.Model.Response_Model.ProductDetailsData.Product_Details_Model;
 import com.ort.fineart.R;
 import com.ort.fineart.Utils.SharedPreferenceManager;

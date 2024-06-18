@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    tools:context=".Ui.Fragment.Filter_View_All_Product_Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/Main_Margin"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="Filter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp"
+
+
+
+                />
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/Close_btn"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/close_icons" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sub product category :"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filterCategory_ChipGp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:chipSpacingVertical="@dimen/_2sdp"
+            app:chipSpacingHorizontal="@dimen/_10sdp"
+            app:singleSelection="true"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/clear_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:background="@drawable/round_black_button_outline_shape_background"
+                android:orientation="horizontal"
+                android:padding="@dimen/Main_Padding">
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Clear"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    />
+
+
+
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/apply_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:background="@drawable/round_black_button_shape_backgroud"
+                android:orientation="horizontal"
+                android:padding="@dimen/Main_Padding">
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Apply"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/SC_Product_Price_Text_Size"
+                    />
+
+
+
+
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

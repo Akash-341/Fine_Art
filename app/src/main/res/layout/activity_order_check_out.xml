@@ -5,34 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Ui.Activity.Order_CheckOut_Activity">
 
 
     <RelativeLayout
-        android:id="@+id/back_layout"
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="@dimen/_44sdp"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/Main_Margin_Left"
-        android:layout_marginRight="@dimen/Main_Margin_Right">
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/back_icon"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_icon" />
 
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/back_icon"
-            android:paddingLeft="@dimen/Main_Margin_Left"
-
             android:text="Checkout"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_14sdp"/>
+
+
+
+
+
 
     </RelativeLayout>
 
@@ -53,11 +63,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/Main_Margin_Left"
                 android:layout_marginRight="@dimen/Main_Margin_Right"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="Billing Information:-"
-                android:textColor="@color/black"
-                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
 
             <TextView
+                android:id="@+id/userName_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/Main_Margin_Left"
@@ -67,6 +79,7 @@
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
+                android:id="@+id/userEmail_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/Main_Margin_Left"
@@ -76,6 +89,7 @@
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
+                android:id="@+id/UserMobileNo_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/Main_Margin_Left"
@@ -102,7 +116,7 @@
                 android:layout_marginTop="@dimen/Main_Margin_Top"
 
                 android:layout_marginRight="@dimen/Main_Margin_Right"
-                android:layout_marginBottom="@dimen/Main_Margin_Bottom">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -111,13 +125,14 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:text="Delivery Address"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/SC_Product_Price_Text_Size" />
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_12sdp" />
 
 
                 <!-- Open Add Address Bottom Sheet -->
 
                 <RelativeLayout
+                    android:id="@+id/addAddress_btn"
                     android:layout_width="@dimen/_17sdp"
                     android:layout_height="@dimen/_17sdp"
                     android:layout_alignParentRight="true"
@@ -139,9 +154,12 @@
 
             </RelativeLayout>
 
-            <include layout="@layout/address_cardview_layout" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/delivery_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
-            <include layout="@layout/address_cardview_layout" />
 
             <View
                 android:layout_width="match_parent"
@@ -159,14 +177,15 @@
                 android:layout_marginLeft="@dimen/Main_Margin_Left"
                 android:layout_marginTop="@dimen/Main_Margin_Top"
                 android:layout_marginRight="@dimen/Main_Margin_Right"
-                android:layout_marginBottom="@dimen/Main_Margin_Bottom"
                 android:text="Orders Details"
-                android:textColor="@color/black"
-                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productList_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
-            <include layout="@layout/checkout_product_details_card_layout" />
-
-            <include layout="@layout/checkout_product_details_card_layout" />
 
             <View
                 android:layout_width="match_parent"
@@ -185,18 +204,56 @@
                 android:layout_marginTop="@dimen/Main_Margin_Top"
                 android:layout_marginRight="@dimen/Main_Margin_Right"
 
-                android:text="Coupon"
-                android:textColor="@color/black"
-                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+                android:text="Coupons"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
 
 
             <RelativeLayout
+                android:id="@+id/viewCouponList_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/Main_Margin"
+                android:visibility="visible"
                 android:background="@drawable/doted_background_shape">
 
                 <RelativeLayout
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/_14sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    >
+
+
+
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerInParent="true"
+                    android:text="View Coupons"
+                    android:textAlignment="center"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/viewCouponDetails_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Main_Margin"
+                android:visibility="gone"
+                android:background="@drawable/doted_background_shape">
+
+                <RelativeLayout
+                    android:id="@+id/removeCoupon_btn"
                     android:layout_width="@dimen/_17sdp"
                     android:layout_height="@dimen/_17sdp"
                     android:layout_alignParentRight="true"
@@ -218,14 +275,28 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/CouponeCode_txt"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:layout_centerInParent="true"
-
                     android:text="View Coupons"
-                    android:textColor="@color/app_color"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/ultra"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp" />
+                <TextView
 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_below="@id/CouponeCode_txt"
+                    android:textAlignment="center"
+                    android:layout_marginTop="@dimen/_14sdp"
+
+                    android:text="Coupon Use"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_7ssp" />
 
             </RelativeLayout>
 
@@ -250,8 +321,8 @@
                 android:layout_marginRight="@dimen/Main_Margin_Right"
                 android:layout_marginBottom="@dimen/Main_Margin_Bottom"
                 android:text="Pricing Details"
-                android:textColor="@color/black"
-                android:textSize="@dimen/SC_Product_Price_Text_Size" />
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
 
 
             <RelativeLayout
@@ -268,10 +339,11 @@
                     android:textSize="@dimen/_12ssp" />
 
                 <TextView
+                    android:id="@+id/subTotal_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="5000₹"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
@@ -292,10 +364,11 @@
                     android:textSize="@dimen/_12ssp" />
 
                 <TextView
+                    android:id="@+id/TotalDiscount_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="5000₹"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
@@ -315,10 +388,11 @@
                     android:textSize="@dimen/_12ssp" />
 
                 <TextView
+                    android:id="@+id/CouponDiscount_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="5000₹"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
@@ -338,10 +412,11 @@
                     android:textSize="@dimen/_12ssp" />
 
                 <TextView
+                    android:id="@+id/DeliveryChangers_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="5000₹"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
@@ -368,15 +443,31 @@
                     android:textSize="@dimen/_12ssp" />
 
                 <TextView
+                    android:id="@+id/TotalPrice_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="5000₹"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14ssp"
                     android:textStyle="bold" />
             </RelativeLayout>
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/loading_lottie"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/progress_anim"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+
             <RelativeLayout
+                android:id="@+id/placeOrder_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

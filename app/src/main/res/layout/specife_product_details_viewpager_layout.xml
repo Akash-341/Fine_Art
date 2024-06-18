@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_180sdp"
+    android:background="@color/white"
+
+    android:paddingRight="@dimen/_14sdp"
+    android:paddingLeft="@dimen/_14sdp"
+    android:paddingTop="@dimen/_14sdp"
+    android:paddingBottom="@dimen/_7sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/bannerImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/demo_image"
+        app:shapeAppearance="@style/Product_Item_Shape_Image" />
+</FrameLayout>

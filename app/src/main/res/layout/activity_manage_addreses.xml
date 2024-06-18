@@ -5,52 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Ui.Activity.Manage_Addreses_Activity">
-
     <RelativeLayout
-        android:id="@+id/back_layout"
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="@dimen/_44sdp"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/Main_Margin_Left"
-        android:layout_marginRight="@dimen/Main_Margin_Right"
-        >
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/back_icon"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
+
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_icon" />
+
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/back_icon"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/Main_Margin_Left"
-
-            android:textColor="@color/black"
+            android:layout_toRightOf="@id/back_icon"
             android:text="Manage Address"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14ssp"
-            />
+            android:layout_marginLeft="@dimen/_14sdp"/>
+
+
+
+
+
 
     </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@id/back_layout"
-    android:orientation="vertical">
-    <include
-        layout="@layout/address_cardview_layout"/>
-    <include
-        layout="@layout/address_cardview_layout"/>
-    <include
-        layout="@layout/address_cardview_layout"/>
 
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar_layout"
+        >
+        <ImageView
+            android:id="@+id/not_found_img"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/not_data_found_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/address_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_above="@id/checkout_layout"
+            android:layout_below="@id/appbar_layout"
+            tools:listitem="@layout/address_cardview_layout"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_lottie"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/loading_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
 
-</LinearLayout>
+    </FrameLayout>
+
 
 
 

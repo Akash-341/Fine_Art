@@ -99,4 +99,23 @@
     <dimen name="_17sdp">17dp</dimen>
     <dimen name="_4sdp">4dp</dimen>
 
+
+
+
+
+
+    <!-- For Dialog-->
+    <dimen name="Main_Dialog_Padding_Left">@dimen/_10sdp</dimen>
+    <dimen name="Main_Dialog_Padding_Right">@dimen/_10sdp</dimen>
+    <dimen name="Main_Dialog_Padding_Top">@dimen/_10sdp</dimen>
+    <dimen name="Main_Dialog_Padding_Bottom">@dimen/_10sdp</dimen>
+    <dimen name="Main_Dialog_Padding">@dimen/_10sdp</dimen>
+
+
+
+
+
+
+
+
 </resources>

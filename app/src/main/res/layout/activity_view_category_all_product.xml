@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Ui.Activity.View_Category_All_Product_Activity">
+    <RelativeLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
+
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
+        <TextView
+            android:id="@+id/appbarName_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back_icon"
+            android:text="All Product"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_14sdp"/>
+
+
+
+        <ImageView
+            android:id="@+id/filter_Icon"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="@dimen/Main_Margin_Left"
+            android:src="@drawable/filter_icon"
+            />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar_layout"
+        >
+        <ImageView
+            android:id="@+id/not_found_img"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/not_data_found_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/viewCategoryAll_Recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/_7sdp"
+            android:paddingLeft="@dimen/_7sdp"
+            android:visibility="gone"
+            tools:listitem="@layout/hub_product_cardview_layout"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_lottie"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/loading_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.ort.fineart.Api_Handel.All_URL;
-import com.ort.fineart.Model.Response_Model.Testimonial_ResponseModel;
+import com.ort.fineart.Model.Response_Model.Home.HomeTestimonial_ResponseModel;
 import com.ort.fineart.R;
 import com.ort.fineart.databinding.TestimonialCardBinding;
 
@@ -17,9 +17,9 @@ import java.util.List;
 
 public class TestimonialAdapter extends RecyclerView.Adapter<TestimonialAdapter.PersonViewHolder> {
 
-    private List<Testimonial_ResponseModel> personList;
+    private List<HomeTestimonial_ResponseModel> personList;
 
-    public TestimonialAdapter(List<Testimonial_ResponseModel> personList) {
+    public TestimonialAdapter(List<HomeTestimonial_ResponseModel> personList) {
         this.personList = personList;
         notifyDataSetChanged();
     }
@@ -31,12 +31,12 @@ public class TestimonialAdapter extends RecyclerView.Adapter<TestimonialAdapter.
         TestimonialCardBinding binding=TestimonialCardBinding.inflate(layoutInflater,parent,false);
         return new PersonViewHolder(binding);
     }
-    public void setTestimonialList(List<Testimonial_ResponseModel> testimonialList) {
+    public void setTestimonialList(List<HomeTestimonial_ResponseModel> testimonialList) {
         this.personList = testimonialList;
     }
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
-        Testimonial_ResponseModel person = personList.get(position);
+        HomeTestimonial_ResponseModel person = personList.get(position);
 
         holder.bind(person);
     }
@@ -54,7 +54,7 @@ public class TestimonialAdapter extends RecyclerView.Adapter<TestimonialAdapter.
             super(binding.getRoot());
             this.binding = binding;
         }
-            void bind(Testimonial_ResponseModel model){
+            void bind(HomeTestimonial_ResponseModel model){
                 Glide.with(binding.getRoot().getContext())
                         .load(All_URL.imgURL+model.getImage())
                         .transform(new CenterCrop())
@@ -63,6 +63,7 @@ public class TestimonialAdapter extends RecyclerView.Adapter<TestimonialAdapter.
               binding.quoteTextView.setText(model.getDescription());
                 binding.nameTextView.setText(model.getName());
                 binding.designationTextView.setText(model.getSubName());
+
             }
 
 

@@ -5,38 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Ui.Activity.View_All_Coupons_Activity">
     <RelativeLayout
-        android:id="@+id/back_layout"
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="@dimen/_44sdp"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/Main_Margin_Left"
-        android:layout_marginRight="@dimen/Main_Margin_Right">
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/back_icon"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_icon" />
 
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/back_icon"
-            android:paddingLeft="@dimen/Main_Margin_Left"
+            android:text="All Coupons"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_14sdp"/>
 
-            android:text="View All Coupons"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
+
+
+
+
 
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/Main_Margin"
+        android:visibility="gone"
         android:background="@drawable/round_button_outline_shape">
 
         <ImageView
@@ -64,8 +75,39 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/coupons_card_view_layout"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/not_found_img"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/not_data_found_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/couponList_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+           />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_lottie"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/loading_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
 
-    <include layout="@layout/coupons_card_view_layout"/>
+    </FrameLayout>
+
+
+
+
 </LinearLayout>

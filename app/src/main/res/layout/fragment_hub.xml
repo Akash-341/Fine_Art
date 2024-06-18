@@ -5,26 +5,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:background="@color/white"
+    android:paddingBottom="@dimen/_50sdp"
+    >
+    <RelativeLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:background="@color/black"
+        >
 
-    <!-- Search Bar -->
-    <EditText
-        android:id="@+id/editTextSearch"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Hub"
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+            android:textSize="@dimen/_22sdp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            />
+
+        <ImageView
+            android:id="@+id/favorite_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="@dimen/_24sdp"
+            android:layout_toLeftOf="@id/cart_Icon"
+            android:src="@drawable/favroite_unfilled_icon"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/cart_Icon"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/shopping_cart"
+            app:tint="@color/white" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/light_gray"
+        android:layout_marginLeft="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:textSize="@dimen/_10ssp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hubCatergory_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search"
 
-        android:padding="10dp"
-        android:background="@drawable/edit_text_border"/>
 
-    <!-- RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/filterCategory_ChipGp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:listitem="@layout/item_card"
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content"
+        app:chipSpacingVertical="@dimen/_2sdp"
+        app:chipSpacingHorizontal="@dimen/_10sdp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+
+        android:layout_marginLeft="@dimen/_14sdp"
+        android:layout_marginRight="@dimen/_14sdp"
+
+        android:layout_gravity="bottom"
+
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/catergoryType_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Traditional Jewellery"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/SC_Product_Price_Text_Size"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/viewAll_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View More"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_10ssp"
+            />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar_layout"
+        >
+        <ImageView
+            android:id="@+id/not_found_img"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/not_data_found_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hub_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:layout_marginLeft="@dimen/_7sdp"
+
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_lottie"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/loading_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+    </FrameLayout>
+
 
 </LinearLayout>

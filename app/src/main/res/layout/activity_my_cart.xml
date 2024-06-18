@@ -4,99 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Ui.Activity.MyCart_Activity">
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="@dimen/_44sdp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_nav_gradient">
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
 
-            <!-- Container for icons and logo -->
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="end">
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
 
-                <!-- Your Existing Logo -->
-                <ImageView
-                    android:id="@+id/logo"
-                    android:layout_width="70dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
 
-                    android:layout_marginEnd="200dp"
-                    android:src="@drawable/falogo" />
-
-                <!-- Profile Icon -->
-                <!-- <ImageView
-                     android:id="@+id/wishlistIcon"
-                     android:layout_width="30dp"
-                     android:layout_height="50dp"
-                     android:layout_marginEnd="10dp"
-                     android:layout_toEndOf="@id/logo"
-                     android:src="@drawable/ic_baseline_favorite_24" />
-
-
-                 &lt;!&ndash; Cart Icon &ndash;&gt;
-                 <ImageView
-                     android:id="@+id/cartIcon"
-                     android:layout_width="30dp"
-                     android:layout_height="50dp"
-                     android:layout_marginEnd="10dp"
-                     android:layout_toEndOf="@id/wishlistIcon"
-                     android:src="@drawable/ic_baseline_shopping_cart_24" />
-
-                 <ImageView
-                     android:id="@+id/profileIcon"
-                     android:layout_width="30dp"
-                     android:layout_height="50dp"
-
-                     android:layout_toEndOf="@id/cartIcon"
-                     android:src="@drawable/ic_baseline_person_pin_24" />
-                 &lt;!&ndash; Wishlist Icon &ndash;&gt;
- -->
-
-            </RelativeLayout>
-        </androidx.appcompat.widget.Toolbar>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/heading"
-        android:orientation="vertical"
-        android:layout_above="@id/checkout_layout"
-        tools:ignore="NotSibling">
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
         <TextView
-            android:id="@+id/heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/Main_Margin"
-            android:layout_marginEnd="@dimen/Main_Margin"
-            android:layout_marginBottom="@dimen/Main_Margin"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back_icon"
             android:text="My Cart"
-            android:textColor="@color/black"
-            android:textSize="@dimen/WL_Heading_Text_Size"
-            android:textStyle="bold" />
-        <include
-            layout="@layout/shopping_cart_card_layout"/>
-        <include
-            layout="@layout/shopping_cart_card_layout"/>
-        <include
-            layout="@layout/shopping_cart_card_layout"/>
-
-    </LinearLayout>
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_14sdp"/>
 
 
 
 
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/checkout_layout"
+        android:layout_below="@id/appbar_layout"
+        >
+        <ImageView
+            android:id="@+id/not_found_img"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/not_data_found_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cart_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_above="@id/checkout_layout"
+            android:layout_below="@id/appbar_layout"
+            tools:listitem="@layout/shopping_cart_card_layout"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_lottie"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/loading_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/checkout_layout"
@@ -109,6 +90,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginTop="5dp">
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -117,6 +99,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="3dp"
+
                 android:orientation="horizontal">
 
 
@@ -180,13 +163,12 @@
 
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/checkout_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
-
             android:background="@drawable/round_black_button_shape_backgroud"
 
             android:orientation="horizontal"

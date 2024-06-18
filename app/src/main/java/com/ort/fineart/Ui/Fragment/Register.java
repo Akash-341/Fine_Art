@@ -39,7 +39,7 @@ public class Register extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding=FragmentRegisterBinding.inflate(inflater,container,false);
-        apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
+        apiService = RetrofitClient.getInstance().getApiService();
 
         binding.tvlogin.setOnClickListener(view -> {
             String firstName = binding.firstName.getText().toString();
@@ -73,7 +73,7 @@ public class Register extends Fragment {
         String password = binding.pass.getText().toString();
         String confirmPassword = binding.confirmPass.getText().toString();
 
-        Call<RegistrationApiResponse_ResponseModel> call = apiService.registerUser(firstName, lastName, email, phoneNumber, password, confirmPassword);
+     /*   Call<RegistrationApiResponse_ResponseModel> call = apiService.registerUser(firstName, lastName, email, phoneNumber, password, confirmPassword);
 
         call.enqueue(new Callback<RegistrationApiResponse_ResponseModel>() {
             @Override
@@ -107,6 +107,6 @@ public class Register extends Fragment {
             public void onFailure(Call<RegistrationApiResponse_ResponseModel> call, Throwable t) {
                 Toast.makeText(getActivity(), "Registration failed. Check your internet connection.", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 }

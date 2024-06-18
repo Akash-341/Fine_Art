@@ -43,10 +43,20 @@ public  class SharedPreferenceManager {
         return sharedPreferences.getString(KEY_USER_LAST_NAME, "");
     }
 
-    public String getUserToken() {
+    public  String getUserToken() {
         return sharedPreferences.getString(KEY_USER_TOKEN, "");
     }
     public String getUserPhone() {
         return sharedPreferences.getString(KEY_USER_PHONE, "");
     }
+
+    public static void clearSharedPreferences(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_pref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply(); // or use editor.commit() if you need synchronous behavior
+    }
+
+
+
 }

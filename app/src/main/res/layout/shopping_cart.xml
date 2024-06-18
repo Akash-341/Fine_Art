@@ -6,6 +6,7 @@
     android:layout_margin="@dimen/Main_Margin"
     android:orientation="horizontal"
     app:cardCornerRadius="@dimen/Round_Shape_Radius"
+    app:cardBackgroundColor="@color/white"
     app:cardElevation="@dimen/_4sdp">
 
 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_85sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingRight="@dimen/_14sdp"
+    android:paddingLeft="@dimen/_14sdp"
+    android:background="@color/white"
+
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_7sdp"
+        app:cardCornerRadius="@dimen/_14sdp"
+        app:cardBackgroundColor="@color/green_color_light">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_10sdp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/review_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textSize="@dimen/_8ssp"
+                android:text="In general English, a sequence of three double quotation marks, like , typically indicates the start and end of a quotation or dialogue. When used around a phrase or sentence, it signifies that the enclosed text is being quoted directly from another source or is meant to be read as dialogue.These are often used for long strings, documentation, or comments where maintaining formatting "
+                android:layout_above="@id/profile_layout"/>
+
+
+            <RelativeLayout
+                android:id="@+id/profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+
+                android:layout_alignParentBottom="true">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:src="@drawable/demo_image"
+                    app:shapeAppearance="@style/Profile_Image_Shape" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/profile_image"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/username_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="@dimen/Half_Main_Margin_Top"
+                        android:text="Suraj Telgade"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/useremail_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="telagadesuraj581998@gmail.com"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

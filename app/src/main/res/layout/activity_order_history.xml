@@ -5,37 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Ui.Activity.Order_History_Activity">
 
     <RelativeLayout
-        android:id="@+id/back_layout"
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="@dimen/_44sdp"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/Main_Margin_Left"
-        android:layout_marginRight="@dimen/Main_Margin_Right"
-        >
+        android:layout_marginTop="0dp"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/back_icon"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
+
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_icon" />
+
+            android:layout_marginLeft="@dimen/Main_Margin_Left"
+
+            android:src="@drawable/back_arrow"
+            app:tint="@color/white" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/back_icon"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/Main_Margin_Left"
+            android:layout_toRightOf="@id/back_icon"
+            android:text="Orders History"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_14sdp"/>
 
-            android:textColor="@color/black"
-            android:text="Order History"
-            android:textSize="@dimen/_16ssp"
-            />
+
+
+
+
 
     </RelativeLayout>
-    <include layout="@layout/order_history_card_layout"/>
-    <include layout="@layout/order_history_card_layout"/>
-    <include layout="@layout/order_history_card_layout"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/not_found_img"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/not_data_found_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderhistory_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_lottie"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/loading_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+    </FrameLayout>
+
+
 </LinearLayout>

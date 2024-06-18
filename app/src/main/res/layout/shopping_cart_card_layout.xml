@@ -8,6 +8,7 @@
     android:layout_marginBottom="@dimen/Main_Margin_Bottom"
     android:orientation="horizontal"
     app:cardCornerRadius="@dimen/Round_Shape_Radius"
+    app:cardBackgroundColor="@color/white"
     app:cardElevation="@dimen/_4sdp">
 
 
@@ -16,13 +17,6 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/SC_Card_Padding">
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="-10dp" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/product_image"
@@ -45,12 +39,29 @@
             android:orientation="vertical"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bridal kundan Set"
-                android:textSize="@dimen/SC_Product_Name_Text_Size"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/productName_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Bridal kundan Set"
+                    android:textSize="@dimen/SC_Product_Name_Text_Size"
+                    android:paddingRight="@dimen/_7sdp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/moreOption_icon"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/more_icon"
+                    />
+
+            </RelativeLayout>
 
 
             <LinearLayout
@@ -69,6 +80,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/productColor_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="3dp"
@@ -98,6 +110,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/productSize_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="3dp"
@@ -136,6 +149,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/productPrice_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1000"
@@ -144,6 +158,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/discountPrice_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="7dp"
@@ -168,6 +183,7 @@
                     android:padding="@dimen/_4sdp">
 
                     <RelativeLayout
+                        android:id="@+id/minus_btn"
                         android:layout_width="@dimen/_17sdp"
                         android:layout_height="@dimen/_17sdp"
                         android:layout_marginRight="@dimen/_3sdp"
@@ -177,13 +193,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="4dp"
-                            android:src="@drawable/plus_icon" />
+                            android:src="@drawable/minus_icon" />
 
 
                     </RelativeLayout>
 
 
                     <TextView
+                        android:id="@+id/quntity_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_3sdp"
@@ -195,6 +212,7 @@
 
 
                     <RelativeLayout
+                        android:id="@+id/plus_btn"
                         android:layout_width="@dimen/_17sdp"
                         android:layout_height="@dimen/_17sdp"
                         android:layout_marginLeft="@dimen/_3sdp"
@@ -204,7 +222,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="4dp"
-                            android:src="@drawable/minus_icon" />
+                            android:src="@drawable/plus_icon" />
 
 
                     </RelativeLayout>

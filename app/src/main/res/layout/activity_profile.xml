@@ -222,7 +222,7 @@
                     android:layout_toRightOf="@id/password_icon"
                     android:layout_centerVertical="true"
                     android:paddingLeft="@dimen/_5sdp"
-                    android:text="Chanage Password"
+                    android:text="Change Password"
                     android:textSize="@dimen/_12ssp"
                     />
 

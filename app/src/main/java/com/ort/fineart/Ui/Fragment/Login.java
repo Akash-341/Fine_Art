@@ -2,21 +2,15 @@ package com.ort.fineart.Ui.Fragment;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,9 +20,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.ort.fineart.Ui.Activity.MainActivity;
 import com.ort.fineart.Api_Handel.All_URL;
 import com.ort.fineart.R;
+import com.ort.fineart.Ui.Activity.MyCart_Activity;
 import com.ort.fineart.Utils.SharedPreferenceManager;
 import com.ort.fineart.databinding.FragmentLoginBinding;
 
@@ -57,7 +51,7 @@ public class Login extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false);
 
-
+        //login1();
 
 
 
@@ -143,9 +137,9 @@ public class Login extends Fragment {
                                 sharedPreferencesManager.saveUserDetails(userId, userEmail, userFirstName, userLastName, userToken,userPhoneNumber);
 
                                 // Example: Start MainActivity
-                                Intent i = new Intent(getActivity().getApplicationContext(), MainActivity.class);
-                                startActivity(i);
-                                requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                               // Intent i = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+                               // startActivity(i);
+                               // requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 
 
                                 // Show a toast with the success message
@@ -179,6 +173,12 @@ public class Login extends Fragment {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Volley.newRequestQueue(getActivity().getApplicationContext()).add(stringRequest);
+    }
+    public void login1(){
+        Intent i = new Intent(getActivity().getApplicationContext(), MyCart_Activity.class);
+        startActivity(i);
+        requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+
     }
 
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_7sdp"
+    android:layout_marginRight="@dimen/_7sdp"
+    android:background="@color/white"
+    android:id="@+id/sizeCard"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/product_size_unselected_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/_4sdp"
+        android:paddingLeft="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingTop="@dimen/_3sdp"
+        >
+
+        <TextView
+            android:id="@+id/sizeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Regular Free"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            />
+
+    </LinearLayout>
+</LinearLayout>

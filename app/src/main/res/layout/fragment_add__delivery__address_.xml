@@ -5,37 +5,56 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Ui.Fragment.Add_Delivery_Address_Fragment">
 
 
 
     <RelativeLayout
-        android:id="@+id/back_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/Main_Margin_Left"
         android:layout_marginRight="@dimen/Main_Margin_Right"
-        >
-
-        <ImageView
-            android:id="@+id/back_icon"
-            android:layout_width="@dimen/_18sdp"
-            android:layout_height="@dimen/_18sdp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/close_icons" />
+        android:orientation="horizontal">
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:text="Add Delivery Address"
             android:textColor="@color/black"
-            android:text="Add Address"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_22sdp"
+
+
+
             />
 
+
+
+
+        <RelativeLayout
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/close_icons" />
+
+
+        </RelativeLayout>
     </RelativeLayout>
+
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,11 +75,14 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Type Of Address"
                 app:helperTextTextColor="@color/gray"
-
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 app:helperText="Like Home/Office">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressType_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -73,11 +95,14 @@
                 android:hint="Enter Address Line 1"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine1_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -90,33 +115,20 @@
                 android:hint="Enter Address Line 2"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine2_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Type Of Address"
-                app:helperTextTextColor="@color/gray"
-                android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
-                app:boxBackgroundColor="@android:color/transparent"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
 
                 android:layout_width="match_parent"
@@ -124,11 +136,14 @@
                 android:hint="Enter Town / City"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressCity_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -141,11 +156,14 @@
                 android:hint="Enter Pincode"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressPin_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -158,11 +176,14 @@
                 android:hint="Enter State"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
-
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressState_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -173,19 +194,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Country"
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
                 app:helperTextTextColor="@color/gray"
                 android:layout_marginTop="@dimen/Half_Main_Margin_Top"
                 app:boxBackgroundColor="@android:color/transparent"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressCountry_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progress_Bar"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/_20sdp"/>
+
             <RelativeLayout
+                android:id="@+id/save_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

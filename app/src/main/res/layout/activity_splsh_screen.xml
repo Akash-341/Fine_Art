@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_3">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#88090303"
@@ -13,10 +13,35 @@
         <ImageView
             android:id="@+id/logoImageView"
             android:layout_width="match_parent"
-            android:layout_height="119dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="277dp"
+            android:layout_height="@dimen/_100sdp"
+
+            android:layout_centerInParent="true"
             android:src="@drawable/falogo" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/Main_Margin"
+        android:layout_marginRight="@dimen/Main_Margin"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:textAlignment="center"
+            android:text="V-1.0.2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            android:textAlignment="center"
+            android:text="Fine Art © 2024. All Rights Reserved. Powered by OneRoof Technologies LLP."/>
     </LinearLayout>
+
+
 </RelativeLayout>
